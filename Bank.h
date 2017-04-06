@@ -8,6 +8,8 @@ public:
 	void setCapital(const int& );
 	void addClient(const Human&);
 	void employWorker(const Client&);
+	void removeWorker(const int&);
+	void removeClient(const int& pesel);
 	bool findClient(const int&);
 	std::string getMainOffice();
 	int getNumberOfClients();

@@ -19,3 +19,4 @@ TEST_F(workerTest, schouldChangeSalaryforWorker)
 {
 	worker->changeSalary(3700);
 }
+

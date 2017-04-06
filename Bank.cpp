@@ -38,3 +38,11 @@ void Bank::employWorker(const Client& client)
 	auto worker = std::make_unique<Worker>(client, 3500);
 	listOfWorkers.insert(std::make_pair(worker->getPesel(), std::move(worker)));
 }
+void Bank::removeWorker(const int& pesel)
+{
+	listOfWorkers.erase(pesel);
+}
+void Bank::removeClient(const int& pesel)
+{
+	listOfClients.erase(pesel);
+}
