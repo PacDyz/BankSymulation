@@ -1,8 +1,6 @@
 #pragma once
 #include <map>
 #include "Company.h"
-//#include "Human.h"
-//#include "Client.h"
 class Bank : public Company
 {
 public:
@@ -13,9 +11,5 @@ public:
 	std::string getMainOffice();
 	int getNumberOfClients();
 	~Bank();
-/*private:
-	int capital;
-	std::string mainOffice;
-	std::map<int, std::unique_ptr<Client>> listOfClients;*/
 };
 

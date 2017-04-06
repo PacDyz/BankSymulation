@@ -1,8 +1,6 @@
 #pragma once
 #include "gtest\gtest.h"
 #include "Client.h"
-#include "Human.h"
-#include <memory>
 
 class clientTest : public testing::Test
 {
