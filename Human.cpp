@@ -14,12 +14,4 @@ int Human::getPesel() const
 {
 	return pesel;
 }
-std::string Human::getName() const
-{
-	return name;
-}
-std::string Human::getSurname() const
-{
-	return surname;
-}
 

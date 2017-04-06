@@ -16,7 +16,6 @@ void Bank::setCapital(const int& newCapital)
 
 void Bank::addClient(const Human& human)
 {
-	CreditCard creditCard(numberCards, human.getName(), human.getSurname(), "Visa", "12/22");
 	auto client = std::make_unique<Client>(human, 7854684);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
 }
