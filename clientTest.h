@@ -12,6 +12,6 @@ protected:
 
 void clientTest::SetUp()
 {
-	client = std::make_unique<Client>(Human("Karol", "Olejniczak", 783458), 87584);
+	client = std::make_unique<Client>(Human("Karol", "Olejniczak", 783458));
 }
 //TEST_F()

@@ -17,7 +17,8 @@ void Bank::setCapital(const int& newCapital)
 void Bank::addClient(const Human& human)
 {
 	CreditCard creditCard(numberCards, human.getName(), human.getSurname(), "Visa", "12/22");
-	auto client = std::make_unique<Client>(human, 7854684);
+	auto client = std::make_unique<Client>(human);
+	client->setCreditCard(creditCard);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
 }
 bool Bank::findClient(const int& pesel)
@@ -36,7 +37,7 @@ int Bank::getNumberOfClients()
 }
 void Bank::employWorker(const Client& client)
 {
-	auto worker = std::make_unique<Worker>(client, 3500);
+	auto worker = std::make_unique<Worker>(std::make_shared<Human>(client.getHuman()), 3500);
 	listOfWorkers.insert(std::make_pair(worker->getPesel(), std::move(worker)));
 }
 void Bank::removeWorker(const int& pesel)
