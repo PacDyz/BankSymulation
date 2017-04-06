@@ -11,8 +11,8 @@ protected:
 void workerTest::SetUp()
 {
 	Human human("Karol", "Olejniczak", 783458);
-	auto client = std::make_shared<Client>(human);
-	worker = std::make_unique<Worker>(std::make_shared<Human>(client->getHuman()), 3500);
+	Client client(human, 8758);
+	worker = std::make_unique<Worker>(client, 3500);
 }
 
 TEST_F(workerTest, schouldChangeSalaryforWorker)

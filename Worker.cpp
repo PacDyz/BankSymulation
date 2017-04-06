@@ -17,5 +17,5 @@ void Worker::changeSalary(int newSalary)
 }
 int Worker::getPesel() const
 {
-	return human->getPesel();
+	return client->getPesel();
 }

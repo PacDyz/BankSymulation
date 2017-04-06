@@ -51,35 +51,35 @@ TEST_F(bankTest, schouldGetNumberOfClients)
 
 TEST_F(bankTest, schouldAddNewWorker)
 {
-	Client client1(Human("Karol", "Olejniczak", 963748234));
+	Client client1(Human("Karol", "Olejniczak", 963748234), 505050);
 	bank->employWorker(client1);
 }
 
 TEST_F(bankTest, schouldAddNewWorkers)
 {
-	Client client1(Human("Karol", "Olejniczak", 963748234));
-	Client client2(Human("Jacek", "Godlewski", 963748233));
+	Client client1(Human("Karol", "Olejniczak", 963748234), 505050);
+	Client client2(Human("Jacek", "Godlewski", 963748233), 505051);
 	bank->employWorker(client1);
 	bank->employWorker(client2);
 }
 
 TEST_F(bankTest, schouldRemoveWorker)
 {
-	Client client1(Human("Karol", "Olejniczak", 963748234));
+	Client client1(Human("Karol", "Olejniczak", 963748234), 505050);
 	bank->employWorker(client1);
-	bank->removeWorker(client1.getPesel());
+	bank->removeWorker(505050);
 }
 
 TEST_F(bankTest, schouldRemoveWorkers)
 {
-	Client client1(Human("Karol", "Olejniczak", 963748234));
-	Client client2(Human("Jacek", "Godlewski", 963748233));
+	Client client1(Human("Karol", "Olejniczak", 963748234), 505050);
+	Client client2(Human("Jacek", "Godlewski", 963748233), 505051);
 	bank->employWorker(client1);
 	bank->employWorker(client2);
-	bank->removeWorker(client1.getPesel());
-	bank->removeWorker(client2.getPesel());
+	bank->removeWorker(505050);
+	bank->removeWorker(505051);
 	bank->employWorker(client1);
-	bank->removeWorker(client1.getPesel());
+	bank->removeWorker(505051);
 }
 TEST_F(bankTest, schouldRemoveClients)
 {
