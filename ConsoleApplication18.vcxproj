@@ -149,6 +149,7 @@
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="clientTest.h" />
+    <ClInclude Include="Company.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="bankTest.h" />
     <ClInclude Include="humanTest.h" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Company.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="ConsoleApplication18.cpp" />
     <ClCompile Include="stdafx.cpp">
