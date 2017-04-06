@@ -20,4 +20,12 @@ TEST_F(humanTest, schouldGetPesel)
 {
 	EXPECT_EQ(10202020, human->getPesel());
 }
+TEST_F(humanTest, schouldGetName)
+{
+	EXPECT_EQ("Karol", human->getName());
+}
+TEST_F(humanTest, schouldGetSurname)
+{
+	EXPECT_EQ("Olejniczak", human->getSurname());
+}
 
