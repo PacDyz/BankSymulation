@@ -15,3 +15,7 @@ void Worker::changeSalary(int newSalary)
 {
 	salary = newSalary;
 }
+int Worker::getPesel() const
+{
+	return client->getPesel();
+}

@@ -16,7 +16,7 @@ void Bank::setCapital(const int& newCapital)
 
 void Bank::addClient(const Human& human)
 {
-	std::unique_ptr<Client> client = std::make_unique<Client>(human, 7854684);
+	auto client = std::make_unique<Client>(human, 7854684);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
 }
 bool Bank::findClient(const int& pesel)
@@ -32,4 +32,9 @@ std::string Bank::getMainOffice()
 int Bank::getNumberOfClients()
 {
 	return listOfClients.size();
+}
+void Bank::employWorker(const Client& client)
+{
+	auto worker = std::make_unique<Worker>(client, 3500);
+	listOfWorkers.insert(std::make_pair(worker->getPesel(), std::move(worker)));
 }

@@ -1,15 +1,14 @@
 #pragma once
 #include "Client.h"
-#include "Company.h"
 class Worker
 {
 public:
-	Worker(const Client& client, std::unique_ptr<Company> company, const int& salary) :client(std::make_unique<Client>(client)), salary(salary), company(std::move(company)) {}
+	Worker(const Client& client, const int& salary) :client(std::make_shared<Client>(client)), salary(salary){}
 	void changeSalary(int salary);
+	int getPesel() const;
 	~Worker();
 private:
-	std::unique_ptr<Client> client;
-	std::unique_ptr<Company> company;
+	std::shared_ptr<Client> client;
 	int salary;
 };
 
