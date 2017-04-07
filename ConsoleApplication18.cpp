@@ -6,6 +6,7 @@
 #include "clientTest.h"
 #include "humanTest.h"
 #include "workerTest.h"
+#include "euroTest.h"
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

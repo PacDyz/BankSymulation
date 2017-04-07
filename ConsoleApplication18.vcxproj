@@ -152,6 +152,9 @@
     <ClInclude Include="Company.h" />
     <ClInclude Include="CreditCard.h" />
     <ClInclude Include="creditCardTest.h" />
+    <ClInclude Include="Euro.h" />
+    <ClInclude Include="euroTest.h" />
+    <ClInclude Include="Money.h" />
     <ClInclude Include="workerTest.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="bankTest.h" />
@@ -165,8 +168,10 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Company.cpp" />
     <ClCompile Include="CreditCard.cpp" />
+    <ClCompile Include="Euro.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="ConsoleApplication18.cpp" />
+    <ClCompile Include="Money.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

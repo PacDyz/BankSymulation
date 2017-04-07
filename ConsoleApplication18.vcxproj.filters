@@ -60,6 +60,15 @@
     <ClInclude Include="creditCardTest.h">
       <Filter>UnitTest</Filter>
     </ClInclude>
+    <ClInclude Include="euroTest.h">
+      <Filter>UnitTest</Filter>
+    </ClInclude>
+    <ClInclude Include="Money.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Euro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -84,6 +93,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CreditCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Money.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Euro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
