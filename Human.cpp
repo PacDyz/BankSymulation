@@ -12,14 +12,14 @@ Human::~Human()
 }
 int Human::getPesel() const
 {
-	return pesel;
+	return id.pesel;
 }
 std::string Human::getName() const
 {
-	return name;
+	return id.name;
 }
 std::string Human::getSurname() const
 {
-	return surname;
+	return id.surname;
 }
 

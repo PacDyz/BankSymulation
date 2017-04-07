@@ -21,17 +21,17 @@ void Bank::addClient(const Human& human)
 	client->setCreditCard(creditCard);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
 }
-bool Bank::findClient(const int& pesel)
+bool Bank::findClient(const int& pesel) const
 {
 	auto itr = listOfClients.find(pesel);
 	return itr != std::end(listOfClients);
 }
 
-std::string Bank::getMainOffice()
+std::string Bank::getMainOffice() const
 {
 	return mainOffice;
 }
-int Bank::getNumberOfClients()
+int Bank::getNumberOfClients() const
 {
 	return listOfClients.size();
 }

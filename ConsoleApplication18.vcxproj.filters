@@ -54,6 +54,12 @@
     <ClInclude Include="workerTest.h">
       <Filter>UnitTest</Filter>
     </ClInclude>
+    <ClInclude Include="CreditCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="creditCardTest.h">
+      <Filter>UnitTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -75,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Worker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

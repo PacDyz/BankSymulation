@@ -11,9 +11,9 @@ public:
 	void employWorker(const Client&);
 	void removeWorker(const int&);
 	void removeClient(const int& pesel);
-	bool findClient(const int&);
-	std::string getMainOffice();
-	int getNumberOfClients();
+	bool findClient(const int&) const;
+	std::string getMainOffice() const;
+	int getNumberOfClients() const;
 	~Bank();
 private:
 	int numberCards;

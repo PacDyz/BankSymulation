@@ -150,6 +150,8 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="clientTest.h" />
     <ClInclude Include="Company.h" />
+    <ClInclude Include="CreditCard.h" />
+    <ClInclude Include="creditCardTest.h" />
     <ClInclude Include="workerTest.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="bankTest.h" />
@@ -162,6 +164,7 @@
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Company.cpp" />
+    <ClCompile Include="CreditCard.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="ConsoleApplication18.cpp" />
     <ClCompile Include="stdafx.cpp">
