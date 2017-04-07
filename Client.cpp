@@ -10,3 +10,8 @@
 Client::~Client()
 {
 }
+
+void Client::setCreditCard(const CreditCard& newCreditCard)
+{
+	creditCard.reset(new CreditCard(newCreditCard));
+}

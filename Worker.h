@@ -3,12 +3,12 @@
 class Worker
 {
 public:
-	Worker(const Client& client, const int& salary) :client(std::make_shared<Client>(client)), salary(salary){}
+	Worker(std::shared_ptr<Human> human, const int& salary) :human(human), salary(salary){}
 	void changeSalary(int salary);
 	int getPesel() const;
 	~Worker();
 private:
-	std::shared_ptr<Client> client;
+	std::shared_ptr<Human> human;
 	int salary;
 };
 
