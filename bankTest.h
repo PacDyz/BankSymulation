@@ -10,21 +10,21 @@ protected:
 };
 void bankTest::SetUp()
 {
-	bank = std::make_unique<Bank>(100000, "Zielona Gora");
+	bank = std::make_unique<Bank>(Euro(10000), "Zielona Gora");
 }
 
-TEST_F(bankTest, schouldAddCapitalToTheBank)
+TEST_F(bankTest, shouldAddCapitalToTheBank)
 {
 	bank->setCapital(154);
 }
 
-TEST_F(bankTest, schouldAddClients)
+TEST_F(bankTest, shouldAddClients)
 {
 	Human human("Karol", "Olejniczak", 963748234);
 	bank->addClient( human);
 }
 
-TEST_F(bankTest, schouldFindClient)
+TEST_F(bankTest, shouldFindClient)
 {
 	Human human1("Karol", "Olejniczak", 963748234);
 	Human human2("Wojtek", "Danielewski", 9352453);
@@ -35,12 +35,12 @@ TEST_F(bankTest, schouldFindClient)
 	ASSERT_TRUE(bank->findClient(human1.getPesel()));
 }
 
-TEST_F(bankTest, schouldGetMainOffice)
+TEST_F(bankTest, shouldGetMainOffice)
 {
 	EXPECT_EQ("Zielona Gora", bank->getMainOffice());
 }
 
-TEST_F(bankTest, schouldGetNumberOfClients)
+TEST_F(bankTest, shouldGetNumberOfClients)
 {
 	Human human1("Karol", "Olejniczak", 963748234);
 	Human human2("Jacek", "Godlewski", 963748233);
@@ -49,13 +49,13 @@ TEST_F(bankTest, schouldGetNumberOfClients)
 	EXPECT_EQ(2, bank->getNumberOfClients());
 }
 
-TEST_F(bankTest, schouldAddNewWorker)
+TEST_F(bankTest, shouldAddNewWorker)
 {
 	Client client1(Human("Karol", "Olejniczak", 963748234));
 	bank->employWorker(client1);
 }
 
-TEST_F(bankTest, schouldAddNewWorkers)
+TEST_F(bankTest, shouldAddNewWorkers)
 {
 	Client client1(Human("Karol", "Olejniczak", 963748234));
 	Client client2(Human("Jacek", "Godlewski", 963748233));
@@ -63,14 +63,14 @@ TEST_F(bankTest, schouldAddNewWorkers)
 	bank->employWorker(client2);
 }
 
-TEST_F(bankTest, schouldRemoveWorker)
+TEST_F(bankTest, shouldRemoveWorker)
 {
 	Client client1(Human("Karol", "Olejniczak", 963748234));
 	bank->employWorker(client1);
 	bank->removeWorker(client1.getPesel());
 }
 
-TEST_F(bankTest, schouldRemoveWorkers)
+TEST_F(bankTest, shouldRemoveWorkers)
 {
 	Client client1(Human("Karol", "Olejniczak", 963748234));
 	Client client2(Human("Jacek", "Godlewski", 963748233));
@@ -81,7 +81,7 @@ TEST_F(bankTest, schouldRemoveWorkers)
 	bank->employWorker(client1);
 	bank->removeWorker(client1.getPesel());
 }
-TEST_F(bankTest, schouldRemoveClients)
+TEST_F(bankTest, shouldRemoveClients)
 {
 	Human human1("Karol", "Olejniczak", 963748234);
 	Human human2("Jacek", "Godlewski", 963748233);

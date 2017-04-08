@@ -1,0 +1,65 @@
+﻿  ConsoleApplication18.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\banktest.h(13): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\banktest.h(13): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\banktest.h(13): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\banktest.h(13): error C2672: 'std::make_unique': no matching overloaded function found
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\banktest.h(13): error C2770: invalid explicit template argument(s) for 'enable_if<std::extent<_Ty,0>::value!=,void>::type std::make_unique(_Types &&...)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(1644): note: see declaration of 'std::make_unique'
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\banktest.h(13): error C2780: 'enable_if<std::is_array<_Ty>::value&&std::extent<_Ty,0>::value==,std::unique_ptr<_Ty,std::default_delete<_Ty>>>::type std::make_unique(std::size_t)': expects 1 arguments - 2 provided
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(1635): note: see declaration of 'std::make_unique'
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(21): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(21): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(21): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(22): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(22): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(22): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(23): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(23): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(23): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+  Company.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+  Bank.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): error C2259: 'Euro': cannot instantiate abstract class
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): note: due to following members:
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(20): note: 'Money &Money::operator +(std::unique_ptr<Money,std::default_delete<_Ty>> &&)': is abstract
+          with
+          [
+              _Ty=Money
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(11): note: see declaration of 'Money::operator +'
+  Generating Code...

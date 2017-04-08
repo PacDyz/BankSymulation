@@ -1,11 +1,11 @@
 #pragma once
-#include <map>
 #include "Company.h"
-#include  "CreditCard.h"
+#include "CreditCard.h"
+
 class Bank : public Company
 {
 public:
-	Bank(const int& capital, const std::string& mainOffice) :Company(capital, mainOffice), numberCards(0) {}
+	Bank(Euro&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice), numberCards(0) {}
 	void setCapital(const int& );
 	void addClient(const Human&);
 	void employWorker(const Client&);

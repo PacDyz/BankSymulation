@@ -25,3 +25,8 @@ bool Euro::operator==(const Euro& euro) const
 {
 	return value == euro.value;
 }
+Euro &Euro::operator=(const int& newMoney)
+{
+	value = newMoney;
+	return *this;
+}

@@ -2,11 +2,11 @@
 #include <memory>
 #include <map>
 #include "Worker.h"
-
+#include "Euro.h"
 class Company
 {
 public:
-	Company(const int& capital, const std::string& mainOffice) :capital(capital), mainOffice(mainOffice) {}
+	Company(Euro&& capital, const std::string& mainOffice) :capital(std::move(capital)), mainOffice(mainOffice) {}
 	virtual void setCapital(const int&) = 0;
 	virtual void addClient(const Human&) = 0;
 	virtual void employWorker(const Client&) = 0;
@@ -17,7 +17,7 @@ public:
 	virtual int getNumberOfClients() const = 0;
 	virtual ~Company();
 protected:
-	int capital;
+	Euro capital;
 	std::string mainOffice;
 	std::map<int, std::shared_ptr<Client>> listOfClients;
 	std::map<int, std::unique_ptr<Worker>> listOfWorkers;

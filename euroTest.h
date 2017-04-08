@@ -16,7 +16,7 @@ void euroTest::SetUp()
 	euro1 = std::make_unique<Euro>(100);
 }
 
-TEST_F(euroTest, schouldAddTwoEuro)
+TEST_F(euroTest, shouldAddTwoEuro)
 {
 	Euro euro1{ 25 };
 	Euro euro2{ 75 };

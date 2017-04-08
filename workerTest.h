@@ -15,7 +15,7 @@ void workerTest::SetUp()
 	worker = std::make_unique<Worker>(std::make_shared<Human>(client->getHuman()), 3500);
 }
 
-TEST_F(workerTest, schouldChangeSalaryforWorker)
+TEST_F(workerTest, shouldChangeSalaryforWorker)
 {
 	worker->changeSalary(3700);
 }
