@@ -1,9 +1,10 @@
 #include "stdafx.h"
 #include "Bank.h"
 
-/*Bank::Bank()
+Bank::Bank(Euro&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice), countNumbersCards(0)
 {
-}*/
+	newNumbersCards  = std::move(generator::generateNumberCard(1000000000000000));
+}
 
 
 Bank::~Bank()
@@ -16,10 +17,18 @@ void Bank::setCapital(const int& newCapital)
 
 void Bank::addClient(const Human& human)
 {
-	CreditCard creditCard(numberCards, human.getName(), human.getSurname(), "Visa", "12/22");
+	long long numberCard = newNumbersCards.back();
+	CreditCard creditCard(numberCard, human.getName(), human.getSurname(), "Visa", "12/22");
+	std::string password = generator::generatePassword();													// extract to another method
+	Account account{ numberCard, 700, password };															// change second argument, must set some money											
 	auto client = std::make_unique<Client>(human);
-	client->setCreditCard(creditCard);
+	client->setCreditCard(creditCard, password);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
+	if (newNumbersCards.empty())
+	{
+		countNumbersCards += 100;
+		newNumbersCards = std::move(generator::generateNumberCard(1000000000000000 + countNumbersCards));  
+	}
 }
 bool Bank::findClient(const int& pesel) const
 {

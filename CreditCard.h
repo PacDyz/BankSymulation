@@ -3,7 +3,7 @@
 class CreditCard
 {
 public:
-	CreditCard(const int& numberCard,
+	CreditCard(const long long& numberCard,
 		const std::string& name,
 		const std::string& surname,
 		const std::string& typeOfCreditCard,
@@ -14,7 +14,7 @@ public:
 		expiryDate(expiryDate) {};
 	~CreditCard();
 private:
-	const int numberCard;
+	const long long numberCard;
 	const std::string name;
 	const std::string surname;
 	const std::string typeOfCreditCard;

@@ -1,11 +1,11 @@
 #pragma once
 #include "Company.h"
 #include "CreditCard.h"
-
+#include "Account.h"
 class Bank : public Company
 {
 public:
-	Bank(Euro&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice), numberCards(0) {}
+	Bank(Euro&&, const std::string&);
 	void setCapital(const int& );
 	void addClient(const Human&);
 	void employWorker(const Client&);
@@ -16,6 +16,7 @@ public:
 	int getNumberOfClients() const;
 	~Bank();
 private:
-	int numberCards;
+	std::vector<long long> newNumbersCards;
+	long long countNumbersCards;
 };
 

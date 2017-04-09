@@ -11,7 +11,12 @@ Client::~Client()
 {
 }
 
-void Client::setCreditCard(const CreditCard& newCreditCard)
+void Client::setCreditCard(const CreditCard& newCreditCard, const std::string& generatedPasswordToAccount)
 {
 	creditCard.reset(new CreditCard(newCreditCard));
+	passwordToAccount = generatedPasswordToAccount;
+}
+std::string Client::getPassword() const
+{
+	return passwordToAccount;
 }

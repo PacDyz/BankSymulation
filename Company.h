@@ -3,6 +3,12 @@
 #include <map>
 #include "Worker.h"
 #include "Euro.h"
+#include <vector>
+namespace generator
+{
+	std::string generatePassword();
+	std::vector<long long> generateNumberCard(const long long&);
+}
 class Company
 {
 public:
