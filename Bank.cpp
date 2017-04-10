@@ -14,20 +14,28 @@ void Bank::setCapital(const int& newCapital)
 {
 	capital = newCapital;
 }
-
-void Bank::addClient(const Human& human)
+CreditCard Bank::createAccount(const Human& human, const std::string& password)
 {
 	long long numberCard = newNumbersCards.back();
 	CreditCard creditCard(numberCard, human.getName(), human.getSurname(), "Visa", "12/22");
-	std::string password = generator::generatePassword();													// extract to another method
-	Account account{ numberCard, 700, password };															// change second argument, must set some money											
+	Account account{ numberCard, 700, password };															
+	listOfAccount.insert(std::make_pair(numberCard, account));
+	return creditCard;
+}
+void Bank::fillInAvailableNumberCard()
+{
+	countNumbersCards += 100;
+	newNumbersCards = std::move(generator::generateNumberCard(1000000000000000 + countNumbersCards));
+}
+void Bank::addClient(const Human& human)
+{
+	std::string password = generator::generatePassword();													
 	auto client = std::make_unique<Client>(human);
-	client->setCreditCard(creditCard, password);
+	client->setCreditCard(createAccount(human, password), password);							// change first argument...
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
 	if (newNumbersCards.empty())
 	{
-		countNumbersCards += 100;
-		newNumbersCards = std::move(generator::generateNumberCard(1000000000000000 + countNumbersCards));  
+		fillInAvailableNumberCard();
 	}
 }
 bool Bank::findClient(const int& pesel) const

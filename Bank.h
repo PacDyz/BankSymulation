@@ -12,11 +12,14 @@ public:
 	void removeWorker(const int&);
 	void removeClient(const int& pesel);
 	bool findClient(const int&) const;
+	void fillInAvailableNumberCard();
+	CreditCard createAccount(const Human&, const std::string&);
 	std::string getMainOffice() const;
 	int getNumberOfClients() const;
 	~Bank();
 private:
 	std::vector<long long> newNumbersCards;
+	std::map<long long, Account> listOfAccount;
 	long long countNumbersCards;
 };
 
