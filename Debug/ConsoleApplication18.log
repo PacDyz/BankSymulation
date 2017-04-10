@@ -1,3 +1,10 @@
-﻿  Bank.cpp
+﻿  Client.cpp
+  Generating Code...
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\creditcard.h(11): warning C4172: returning address of local variable or temporary
+  Skipping... (no relevant changes detected)
+  Worker.cpp
+  ConsoleApplication18.cpp
+  Company.cpp
+  Bank.cpp
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)

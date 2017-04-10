@@ -1,10 +1,9 @@
 #pragma once
 #include <memory>
-
 class Money
 {
 public:
-	Money(const int& value) :value(value) {};
+	Money(const int&);
 	Money(const Money&) = delete;
 	Money &operator=(const Money&) = delete;
 	Money(Money&&) :value(std::move(value)) {};

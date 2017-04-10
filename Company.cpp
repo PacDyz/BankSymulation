@@ -5,9 +5,8 @@
 #include <algorithm>
 #include <random>
 #include <numeric>
-//Company::Company()
-//{
-//}
+
+Company::Company(Euro&& capital, const std::string& mainOffice) :capital(std::move(capital)), mainOffice(mainOffice) {}
 
 std::string generator::generatePassword()
 {
@@ -20,6 +19,7 @@ std::string generator::generatePassword()
 	}
 	return password;
 }
+
 std::vector<long long> generator::generateNumberCard(const long long& startNumber)
 {
 	std::vector<long long> vec(100);
@@ -29,6 +29,5 @@ std::vector<long long> generator::generateNumberCard(const long long& startNumbe
 	std::shuffle(std::begin(vec), std::end(vec), g);
 	return vec;
 }
-Company::~Company()
-{
-}
+
+Company::~Company(){}

@@ -2,9 +2,7 @@
 #include "Money.h"
 
 
-/*Money::Money()
-{
-}*/
+Money::Money(const int& value) : value(value) {};
 
 Money::~Money()
 {

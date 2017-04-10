@@ -21,7 +21,7 @@ TEST_F(bankTest, shouldAddCapitalToTheBank)
 TEST_F(bankTest, shouldAddClients)
 {
 	Human human("Karol", "Olejniczak", 963748234);
-	bank->addClient( human);
+	bank->addClient(human);
 }
 
 TEST_F(bankTest, shouldFindClient)
@@ -32,7 +32,7 @@ TEST_F(bankTest, shouldFindClient)
 	bank->addClient(human1);
 	bank->addClient(human2);
 	bank->addClient(human3);
-	ASSERT_TRUE(bank->findClient(human1.getPesel()));
+	ASSERT_TRUE(bank->findClient(963748234));
 }
 
 TEST_F(bankTest, shouldGetMainOffice)
@@ -67,7 +67,7 @@ TEST_F(bankTest, shouldRemoveWorker)
 {
 	Client client1(Human("Karol", "Olejniczak", 963748234));
 	bank->employWorker(client1);
-	bank->removeWorker(client1.getPesel());
+	bank->removeWorker(963748234);
 }
 
 TEST_F(bankTest, shouldRemoveWorkers)
@@ -76,10 +76,10 @@ TEST_F(bankTest, shouldRemoveWorkers)
 	Client client2(Human("Jacek", "Godlewski", 963748233));
 	bank->employWorker(client1);
 	bank->employWorker(client2);
-	bank->removeWorker(client1.getPesel());
-	bank->removeWorker(client2.getPesel());
+	bank->removeWorker(963748234);
+	bank->removeWorker(963748233);
 	bank->employWorker(client1);
-	bank->removeWorker(client1.getPesel());
+	bank->removeWorker(963748234);
 }
 TEST_F(bankTest, shouldRemoveClients)
 {
@@ -88,7 +88,7 @@ TEST_F(bankTest, shouldRemoveClients)
 	bank->addClient(human1);
 	bank->addClient(human2);
 	bank->removeClient(963748234);
-	bank->removeClient(963748233);
+	bank->removeClient(963748233);	
 	bank->addClient(human1);
 	bank->removeClient(963748234);
 }

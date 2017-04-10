@@ -1,15 +1,12 @@
 #pragma once
-#include "Bank.h"
+#include <string>
+
 class Account
 {
 public:
-	Account(const long long& numberAccount, 
-		const int& clientMoney, 
-		const std::string& password) : 
-		numberAccount(numberAccount), 
-		moneyInAccount(clientMoney),
-		password(password)
-									  {}
+	Account(const long long& ,
+		const int&,
+		const std::string&);
 	~Account();
 private:
 	long long numberAccount;

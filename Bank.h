@@ -1,25 +1,25 @@
 #pragma once
-#include "Company.h"
-#include "CreditCard.h"
 #include "Account.h"
+#include "Company.h"
+
 class Bank : public Company
 {
 public:
 	Bank(Euro&&, const std::string&);
-	void setCapital(const int& );
 	void addClient(const Human&);
-	void employWorker(const Client&);
-	void removeWorker(const int&);
-	void removeClient(const int& pesel);
-	bool findClient(const int&) const;
-	void fillInAvailableNumberCard();
 	CreditCard createAccount(const Human&, const std::string&);
+	void employWorker(const Human&);
 	std::string getMainOffice() const;
 	int getNumberOfClients() const;
+	void fillInAvailableNumberCard();
+	bool findClient(const int&) const;
+	void removeClient(const int& pesel);
+	void removeWorker(const int&);
+	void setCapital(const int&);
 	~Bank();
 private:
-	std::vector<long long> newNumbersCards;
-	std::map<long long, Account> listOfAccount;
 	long long countNumbersCards;
+	std::map<long long, std::unique_ptr<Account>> listOfAccount;
+	std::vector<long long> newNumbersCards;
 };
 

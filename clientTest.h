@@ -27,9 +27,9 @@ TEST_F(clientTest, shouldGetPesel)
 }
 TEST_F(clientTest, shouldGetHuman)
 {
-	std::string name(client->getHuman().getName());
-	std::string surname(client->getHuman().getSurname());
-	int pesel(client->getHuman().getPesel());
+	std::string name(client->getName());
+	std::string surname(client->getSurname());
+	int pesel(client->getPesel());
 	EXPECT_EQ("Karol", name);
 	EXPECT_EQ("Olejniczak", surname);
 	EXPECT_EQ(783458, pesel);

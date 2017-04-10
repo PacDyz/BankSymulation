@@ -1,26 +1,26 @@
 #pragma once
 #include <memory>
 #include <map>
-#include "Worker.h"
 #include "Euro.h"
+#include "Worker.h"
 #include <vector>
 namespace generator
 {
-	std::string generatePassword();
 	std::vector<long long> generateNumberCard(const long long&);
+	std::string generatePassword();
 }
 class Company
 {
 public:
-	Company(Euro&& capital, const std::string& mainOffice) :capital(std::move(capital)), mainOffice(mainOffice) {}
-	virtual void setCapital(const int&) = 0;
+	Company(Euro&&, const std::string&);
 	virtual void addClient(const Human&) = 0;
-	virtual void employWorker(const Client&) = 0;
+	virtual void employWorker(const Human&) = 0;
 	virtual bool findClient(const int&) const = 0;
-	virtual void removeWorker(const int&) = 0;
-	virtual void removeClient(const int& pesel) = 0;
 	virtual std::string getMainOffice() const = 0;
 	virtual int getNumberOfClients() const = 0;
+	virtual void removeClient(const int& pesel) = 0;
+	virtual void removeWorker(const int&) = 0;
+	virtual void setCapital(const int&) = 0;
 	virtual ~Company();
 protected:
 	Euro capital;
