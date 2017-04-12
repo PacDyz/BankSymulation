@@ -2,14 +2,14 @@
 //
 
 #include "stdafx.h"
-#include "bankTest.h"
-#include "clientTest.h"
-#include "humanTest.h"
-#include "workerTest.h"
-#include "euroTest.h"
-#include "accountTest.h"
-#include "creditCardTest.h"
-#include "usdTest.h"
+#include "UnitTests/bankTest.h"
+#include "UnitTests/clientTest.h"
+#include "UnitTests/humanTest.h"
+#include "UnitTests/workerTest.h"
+#include "UnitTests/euroTest.h"
+#include "UnitTests/accountTest.h"
+#include "UnitTests/creditCardTest.h"
+#include "UnitTests/usdTest.h"
 
 
 int main(int argc, char **argv) {
