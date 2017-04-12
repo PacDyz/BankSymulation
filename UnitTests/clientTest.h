@@ -8,12 +8,12 @@ class clientTest : public testing::Test
 protected:
 	virtual void SetUp();
 
-	std::unique_ptr<Client> client;
+	std::shared_ptr<Client> client;
 };
 
 void clientTest::SetUp()
 {
-	client = std::make_unique<Client>(Human("Karol", "Olejniczak", 783458));
+	client = std::make_shared<Client>(Human("Karol", "Olejniczak", 783458));
 }
 
 TEST_F(clientTest, shouldSetCreditCard)
@@ -42,4 +42,13 @@ TEST_F(clientTest, schouldGetPassword)
 {
 	client->setCreditCard(CreditCard(342342, "Karol", "Olejniczak", "Visa", "10/22"), "password");
 	EXPECT_EQ("password", client->getPassword());
+}
+TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithoutCreditCard)
+{
+	std::cout << client;
+}
+TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithCreditCard)
+{
+	client->setCreditCard(CreditCard(342342, "Karol", "Olejniczak", "Visa", "10/22"), "password");
+	std::cout << client;
 }

@@ -147,22 +147,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
-    <ClInclude Include="accountTest.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Client.h" />
-    <ClInclude Include="clientTest.h" />
     <ClInclude Include="Company.h" />
     <ClInclude Include="CreditCard.h" />
-    <ClInclude Include="creditCardTest.h" />
     <ClInclude Include="Euro.h" />
-    <ClInclude Include="euroTest.h" />
     <ClInclude Include="Money.h" />
+    <ClInclude Include="UnitTests\accountTest.h" />
+    <ClInclude Include="UnitTests\bankTest.h" />
+    <ClInclude Include="UnitTests\clientTest.h" />
+    <ClInclude Include="UnitTests\creditCardTest.h" />
+    <ClInclude Include="UnitTests\euroTest.h" />
+    <ClInclude Include="UnitTests\humanTest.h" />
+    <ClInclude Include="UnitTests\usdTest.h" />
+    <ClInclude Include="UnitTests\workerTest.h" />
     <ClInclude Include="USD.h" />
-    <ClInclude Include="usdTest.h" />
-    <ClInclude Include="workerTest.h" />
     <ClInclude Include="Human.h" />
-    <ClInclude Include="bankTest.h" />
-    <ClInclude Include="humanTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Worker.h" />

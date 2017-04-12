@@ -92,3 +92,31 @@ TEST_F(bankTest, shouldRemoveClients)
 	bank->addClient(human1);
 	bank->removeClient(963748234);
 }
+TEST_F(bankTest, schouldAddHundredOneClients)
+{
+	for (unsigned int i = 0; i < 101; ++i)
+	{
+		Human human("Karol", "Olejniczak", i);
+		bank->addClient(human);
+	}
+	EXPECT_EQ(101, bank->getNumberOfClients());
+}
+TEST_F(bankTest, schouldAddThousandClients)
+{
+	for (unsigned int i = 0; i < 1000; ++i)
+	{
+		Human human("Karol", "Olejniczak", i);
+		bank->addClient(human);
+	}
+	EXPECT_EQ(1000, bank->getNumberOfClients());
+}
+TEST_F(bankTest, schouldAddAndRemoveHundredOneClients)
+{
+	for (unsigned int i = 0; i < 101; ++i)
+	{
+		Human human("Karol", "Olejniczak", i);
+		bank->addClient(human);
+		bank->removeClient(i);
+	}
+	EXPECT_EQ(0, bank->getNumberOfClients());
+}

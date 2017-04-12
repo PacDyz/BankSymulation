@@ -7,7 +7,7 @@ class Bank : public Company
 public:
 	Bank(Euro&&, const std::string&);
 	void addClient(const Human&);
-	void check();
+	void checkNumberAvailableCard();
 	CreditCard createAccount(const Human&, const std::string&);
 	void employWorker(const Human&);
 	std::string getMainOffice() const;

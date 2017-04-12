@@ -29,7 +29,7 @@ void Bank::fillInAvailableNumberCard()
 	countNumbersCards += 100;
 	newNumbersCards = std::move(generator::generateNumberCard(1000000000000000 + countNumbersCards));
 }
-void Bank::check() {
+void Bank::checkNumberAvailableCard() {
 	if (newNumbersCards.empty())
 	{
 		//t1 = std::thread(&Bank::fillInAvailableNumberCard, this);
@@ -40,7 +40,7 @@ void Bank::check() {
 void Bank::addClient(const Human& human)
 {
 	//std::thread t1(&Bank::check, this);
-	check();
+	checkNumberAvailableCard();
 	//std::promise<std::string> p;
 	//auto password = p.get_future();
 	std::string password = generator::generatePassword();

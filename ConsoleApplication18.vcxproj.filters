@@ -13,8 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="UnitTest">
-      <UniqueIdentifier>{5e01cce0-0646-43bd-bb2c-eed055e019ec}</UniqueIdentifier>
+    <Filter Include="UnitTests">
+      <UniqueIdentifier>{c3d836d0-f5bb-4e3c-9138-f281ce071f35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,20 +30,11 @@
     <ClInclude Include="Bank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bankTest.h">
-      <Filter>UnitTest</Filter>
-    </ClInclude>
     <ClInclude Include="Human.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="humanTest.h">
-      <Filter>UnitTest</Filter>
-    </ClInclude>
-    <ClInclude Include="clientTest.h">
-      <Filter>UnitTest</Filter>
     </ClInclude>
     <ClInclude Include="Company.h">
       <Filter>Header Files</Filter>
@@ -51,17 +42,8 @@
     <ClInclude Include="Worker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="workerTest.h">
-      <Filter>UnitTest</Filter>
-    </ClInclude>
     <ClInclude Include="CreditCard.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="creditCardTest.h">
-      <Filter>UnitTest</Filter>
-    </ClInclude>
-    <ClInclude Include="euroTest.h">
-      <Filter>UnitTest</Filter>
     </ClInclude>
     <ClInclude Include="Money.h">
       <Filter>Header Files</Filter>
@@ -72,14 +54,32 @@
     <ClInclude Include="Account.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="accountTest.h">
-      <Filter>UnitTest</Filter>
-    </ClInclude>
     <ClInclude Include="USD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="usdTest.h">
-      <Filter>UnitTest</Filter>
+    <ClInclude Include="UnitTests\workerTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\euroTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\usdTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\humanTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\creditCardTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\clientTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\accountTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\bankTest.h">
+      <Filter>UnitTests</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
