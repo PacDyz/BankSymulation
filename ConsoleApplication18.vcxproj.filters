@@ -75,6 +75,12 @@
     <ClInclude Include="accountTest.h">
       <Filter>UnitTest</Filter>
     </ClInclude>
+    <ClInclude Include="USD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="usdTest.h">
+      <Filter>UnitTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -108,6 +114,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="USD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

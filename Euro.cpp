@@ -2,6 +2,7 @@
 #include "Euro.h"
 
 
+Euro::Euro() :Money(1.0) {}
 Euro::Euro(const int& value) : Money(value) {};
 
 
@@ -9,13 +10,13 @@ Euro::~Euro()
 {
 }
 
-Euro &Euro::operator+(Euro&& euro)
+Euro &Euro::operator+=(Euro&& euro)
 {
 	value += euro.value;
 	return *this;
 }
 
-Euro &Euro::operator-(Euro&& euro)
+Euro &Euro::operator-=(Euro&& euro)
 {
 	value -= euro.value;
 	return *this;

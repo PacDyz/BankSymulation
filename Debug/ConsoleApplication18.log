@@ -1,10 +1,19 @@
-﻿  Client.cpp
+﻿  Bank.cpp
   Generating Code...
-c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\creditcard.h(11): warning C4172: returning address of local variable or temporary
-  Skipping... (no relevant changes detected)
+  Compiling...
   Worker.cpp
+  CreditCard.cpp
   ConsoleApplication18.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\eurotest.h(31): note: see reference to function template instantiation 'AfterExchangeMoney cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
+          with
+          [
+              AfterExchangeMoney=USD,
+              BeforeExchangeMoney=Euro
+          ]
   Company.cpp
-  Bank.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Client.cpp
+  Generating Code...
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)

@@ -8,6 +8,9 @@
 #include "workerTest.h"
 #include "euroTest.h"
 #include "accountTest.h"
+#include "creditCardTest.h"
+#include "usdTest.h"
+
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

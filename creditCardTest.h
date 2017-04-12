@@ -2,6 +2,7 @@
 #include "gtest/gtest.h"
 #include "CreditCard.h"
 #include <memory>
+#include "Client.h"
 class creditCardTest : public testing::Test
 {
 protected:

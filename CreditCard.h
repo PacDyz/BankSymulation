@@ -3,18 +3,20 @@
 class CreditCard
 {
 public:
+	//CreditCard() :numberCard(0), name(""), surname(""), typeOfCreditCard(""), expiryDate("") {}
 	CreditCard(const long long&,
 		const std::string&,
 		const std::string&,
 		const std::string&,
 		const std::string&);
-	CreditCard &operator=(const CreditCard& cr) { return CreditCard(cr.numberCard, cr.name, cr.surname, cr.typeOfCreditCard, cr.expiryDate); }
+	void operator=(const CreditCard& cr) {
+		numberCard = cr.numberCard;  name = cr.name; surname = cr.surname; typeOfCreditCard = cr.typeOfCreditCard; expiryDate = cr.expiryDate; }
 	~CreditCard();
 private:
-	const long long numberCard;
-	const std::string name;
-	const std::string surname;
-	const std::string typeOfCreditCard;
-	const std::string expiryDate;
+	 long long numberCard;
+	 std::string name;
+	 std::string surname;
+	 std::string typeOfCreditCard;
+	 std::string expiryDate;
 };
 
