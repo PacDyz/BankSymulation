@@ -12,10 +12,6 @@ Bank::Bank(Euro&& capital, const std::string& mainOffice) :Company(std::move(cap
 
 Bank::~Bank(){}
 
-void Bank::setCapital(const int& newCapital)
-{
-	capital = newCapital;
-}
 CreditCard Bank::createAccount(const Human& human, const std::string& password)
 {
 	long long numberCard = newNumbersCards.back();
@@ -59,35 +55,4 @@ void Bank::addClient(const Human& human)
 	//t2.join();
 	client->setCreditCard(newCreditCard, password);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
-}
-bool Bank::findClient(const int& pesel) const
-{
-	auto itr = listOfClients.find(pesel);
-	return itr != std::end(listOfClients);
-}
-
-std::string Bank::getMainOffice() const
-{
-	return mainOffice;
-}
-
-int Bank::getNumberOfClients() const
-{
-	return listOfClients.size();
-}
-
-void Bank::employWorker(const Human& human)
-{
-	auto worker = std::make_unique<Worker>(std::make_shared<Human>(human), 3500);
-	listOfWorkers.insert(std::make_pair(worker->getPesel(), std::move(worker)));
-}
-
-void Bank::removeWorker(const int& pesel)
-{
-	listOfWorkers.erase(pesel);
-}
-
-void Bank::removeClient(const int& pesel)
-{
-	listOfClients.erase(pesel);
 }

@@ -9,14 +9,7 @@ public:
 	void addClient(const Human&);
 	void checkNumberAvailableCard();
 	CreditCard createAccount(const Human&, const std::string&);
-	void employWorker(const Human&);
-	std::string getMainOffice() const;
-	int getNumberOfClients() const;
 	void fillInAvailableNumberCard();
-	bool findClient(const int&) const;
-	void removeClient(const int& pesel);
-	void removeWorker(const int&);
-	void setCapital(const int&);
 	~Bank();
 private:
 	long long countNumbersCards;

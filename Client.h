@@ -6,9 +6,9 @@ class Client : public Human
 {
 public:
 	Client(const Human&&);
-	void setCreditCard(const CreditCard&, const std::string&);
-	std::string getPassword() const;
 	CreditCard getCreditCard() const;
+	std::string getPassword() const;
+	void setCreditCard(const CreditCard&, const std::string&);
 	~Client();
 private:
 	CreditCard creditCard;

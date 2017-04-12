@@ -9,19 +9,19 @@ public:
 		const std::string&,
 		const std::string&,
 		const std::string&);
-	void operator=(const CreditCard& );
 	long long getNumberCard() const;
+	std::string getExpiryDate() const;
 	std::string getName() const;
 	std::string getSurname() const;
 	std::string getTypeOfCreditCard() const;
-	std::string getExpiryDate() const;
+	void operator=(const CreditCard&);
 	~CreditCard();
 private:
 	 long long numberCard;
+	 std::string expiryDate;
 	 std::string name;
 	 std::string surname;
 	 std::string typeOfCreditCard;
-	 std::string expiryDate;
 };
 
 std::ostream &operator<<(std::ostream& str, const CreditCard&);

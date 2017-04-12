@@ -6,9 +6,9 @@ public:
 	USD();
 	USD(const int&);
 	USD(USD&& money) : Money(std::move(money)) {};
+	bool operator==(const USD&) const;
 	USD &operator+=(USD&&);
 	USD &operator-=(USD&&);
-	bool operator==(const USD&) const;
 	USD &operator=(const int&);
 	~USD();
 };

@@ -13,14 +13,14 @@ class Company
 {
 public:
 	Company(Euro&&, const std::string&);
+	bool findClient(const int&) const;
+	int getNumberOfClients() const;
+	std::string getMainOffice() const;
+	void employWorker(const Human&);
+	void removeClient(const int& pesel);
+	void removeWorker(const int&);
+	void setCapital(const int&);
 	virtual void addClient(const Human&) = 0;
-	virtual void employWorker(const Human&) = 0;
-	virtual bool findClient(const int&) const = 0;
-	virtual std::string getMainOffice() const = 0;
-	virtual int getNumberOfClients() const = 0;
-	virtual void removeClient(const int& pesel) = 0;
-	virtual void removeWorker(const int&) = 0;
-	virtual void setCapital(const int&) = 0;
 	virtual ~Company();
 protected:
 	Euro capital;

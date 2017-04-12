@@ -8,12 +8,12 @@ public:
 	Money(const int&, const double&);
 	Money(const double&);
 	Money(const Money&) = delete;
-	Money &operator=(const Money&) = delete;
 	Money(Money&&) :value(std::move(value)) {};
-	int getValue() const;
 	double getNominalValue() const;
-	template<typename T, typename K>
-	K &operator=(T&&);
+	int getValue() const;
+	Money &operator=(const Money&) = delete;
+	//template<typename T, typename K>
+	//K &operator=(T&&);
 	//virtual Money &operator+(std::unique_ptr<Money>&&) = 0;
 	//virtual Money &operator-(Money&&) = 0;
 	//virtual bool operator==(const Money&) const = 0;

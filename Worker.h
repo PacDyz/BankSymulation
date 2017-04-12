@@ -5,8 +5,8 @@ class Worker
 {
 public:
 	Worker(std::shared_ptr<Human>, const int&);
-	void changeSalary(int salary);
 	int getPesel() const;
+	void changeSalary(int salary);
 	~Worker();
 private:
 	std::shared_ptr<Human> client;
