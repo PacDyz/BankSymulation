@@ -6,7 +6,6 @@
 #include <random>
 #include <numeric>
 
-Company::Company(Euro&& capital, const std::string& mainOffice) :capital(std::move(capital)), mainOffice(mainOffice) {}
 
 std::string generator::generatePassword()
 {

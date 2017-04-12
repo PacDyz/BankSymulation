@@ -1,18 +1,30 @@
-﻿  Bank.cpp
-  Generating Code...
-  Compiling...
-  ConsoleApplication18.cpp
+﻿  ConsoleApplication18.cpp
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\eurotest.h(31): note: see reference to function template instantiation 'AfterExchangeMoney cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\eurotest.h(31): note: see reference to function template instantiation 'decltype(auto) cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
           with
           [
-              AfterExchangeMoney=USD,
               BeforeExchangeMoney=Euro
           ]
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Worker.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\bank.h(25): note: see reference to function template instantiation 'Company::Company<Euro>(T &&,const std::string &)' being compiled
+          with
+          [
+              T=Euro
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(1630): note: see reference to function template instantiation 'Bank::Bank<_Ty>(T &&,const std::string &)' being compiled
+          with
+          [
+              _Ty=Euro,
+              T=Euro
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\banktest.h(13): note: see reference to function template instantiation 'std::unique_ptr<Bank,std::default_delete<_Ty>> std::make_unique<Bank,Euro,const char(&)[13]>(Euro &&,const char (&)[13])' being compiled
+          with
+          [
+              _Ty=Bank
+          ]
   Company.cpp
-  USD.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.cpp(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Bank.cpp
+  Generating Code...
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)

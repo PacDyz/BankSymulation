@@ -12,7 +12,10 @@ namespace generator
 class Company
 {
 public:
-	Company(Euro&&, const std::string&);
+	template<typename T>
+	Company(T&&, const std::string&);
+	template<>
+	Company::Company(int&& capital, const std::string& mainOffice);
 	bool findClient(const int&) const;
 	int getNumberOfClients() const;
 	std::string getMainOffice() const;
@@ -23,9 +26,14 @@ public:
 	virtual void addClient(const Human&) = 0;
 	virtual ~Company();
 protected:
-	Euro capital;
+	int capital;
 	std::string mainOffice;
 	std::map<int, std::shared_ptr<Client>> listOfClients;
 	std::map<int, std::unique_ptr<Worker>> listOfWorkers;
 };
 
+template<typename T>
+Company::Company(T&& capital, const std::string& mainOffice) : capital(capital.getValue()*capital.getNominalValue()), mainOffice(mainOffice) {}
+
+template<>
+Company::Company(int&& capital, const std::string& mainOffice) : capital(std::move(capital)), mainOffice(mainOffice) {}

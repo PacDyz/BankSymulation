@@ -5,10 +5,6 @@
 #include <thread>
 //std::condition_variable cond;
 //std::mutex mu;
-Bank::Bank(Euro&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice), countNumbersCards(0)
-{
-	newNumbersCards  = std::move(generator::generateNumberCard(1000000000000000));
-}
 
 Bank::~Bank(){}
 

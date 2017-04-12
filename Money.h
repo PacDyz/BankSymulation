@@ -31,11 +31,11 @@ K &Money::operator=(T&& t)
 namespace cantor
 {
 	template<typename BeforeExchangeMoney, typename AfterExchangeMoney>
-	AfterExchangeMoney exchangeMoney(BeforeExchangeMoney&& moneyToExchange);
+	decltype(auto) exchangeMoney(BeforeExchangeMoney&& moneyToExchange);
 }
 
 template<typename BeforeExchangeMoney, typename AfterExchangeMoney>
-AfterExchangeMoney cantor::exchangeMoney(BeforeExchangeMoney&& moneyToExchange)
+decltype(auto) cantor::exchangeMoney(BeforeExchangeMoney&& moneyToExchange)
 {
 	AfterExchangeMoney afterExchangeMoney;
 	return AfterExchangeMoney(moneyToExchange.getValue()*moneyToExchange.getNominalValue() / afterExchangeMoney.getNominalValue());
