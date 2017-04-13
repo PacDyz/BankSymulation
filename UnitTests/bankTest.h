@@ -110,6 +110,7 @@ TEST_F(bankTest, schouldAddThousandClients)
 	}
 	EXPECT_EQ(1000, bank->getNumberOfClients());
 }
+
 TEST_F(bankTest, schouldAddAndRemoveHundredOneClients)
 {
 	for (unsigned int i = 0; i < 101; ++i)
@@ -119,4 +120,14 @@ TEST_F(bankTest, schouldAddAndRemoveHundredOneClients)
 		bank->removeClient(i);
 	}
 	EXPECT_EQ(0, bank->getNumberOfClients());
+}
+
+TEST_F(bankTest, schouldShowAllClients)
+{
+	for (unsigned int i = 0; i < 10; ++i)
+	{
+		Human human("Karol", "Olejniczak", i);
+		bank->addClient(human);
+	}
+	bank->displayAllClients();
 }

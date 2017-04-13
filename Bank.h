@@ -1,14 +1,13 @@
 #pragma once
 #include "Account.h"
 #include "Company.h"
-
 class Bank : public Company
 {
 public:
 	template<typename T>
 	Bank(T&&, const std::string&);
 	template<>
-	Bank::Bank(int&& capital, const std::string& mainOffice);
+	Bank(int&& capital, const std::string& mainOffice);
 	void addClient(const Human&);
 	void checkNumberAvailableCard();
 	CreditCard createAccount(const Human&, const std::string&);

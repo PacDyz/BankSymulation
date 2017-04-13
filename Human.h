@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <memory>
 struct Id 
 {
 	const std::string name;

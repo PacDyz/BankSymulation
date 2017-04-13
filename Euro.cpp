@@ -1,14 +1,15 @@
 #include "stdafx.h"
 #include "Euro.h"
-
+#include <memory>
 
 Euro::Euro() :Money(1.0) {}
+
+Euro::Euro(Euro&& money) : Money(std::move(money)) {};
+
 Euro::Euro(const int& value) : Money(value) {};
 
 
-Euro::~Euro()
-{
-}
+Euro::~Euro() = default;
 
 Euro &Euro::operator+=(Euro&& euro)
 {

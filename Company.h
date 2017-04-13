@@ -23,6 +23,7 @@ public:
 	void removeClient(const int& pesel);
 	void removeWorker(const int&);
 	void setCapital(const int&);
+	void displayAllClients() const;
 	virtual void addClient(const Human&) = 0;
 	virtual ~Company();
 protected:

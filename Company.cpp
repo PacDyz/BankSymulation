@@ -5,11 +5,13 @@
 #include <algorithm>
 #include <random>
 #include <numeric>
+#include <iostream>
+//void Company::pimpl_deleter::operator()(Company::pImpl*ptr) const { delete ptr; }
+//auto deleter = [](pImpl *p) {delete p; };
 
-
-std::string generator::generatePassword()
+std::string generator::generatePassword() 
 {
-	srand(time(nullptr));
+	std::srand(static_cast<unsigned int>(time(nullptr)));
 	unsigned int lenghtPassword = std::rand() % 15 + 5;
 	std::string password;
 	for (unsigned int i = 0; i < lenghtPassword; ++i)
@@ -64,4 +66,11 @@ std::vector<long long> generator::generateNumberCard(const long long& startNumbe
 	return vec;
 }
 
-Company::~Company(){}
+void Company::displayAllClients() const
+{
+	for (const auto& itr : listOfClients)
+		std::cout << itr.second;
+}
+
+
+Company::~Company() = default;

@@ -9,4 +9,4 @@ Account::Account(const long long& numberAccount,
 	moneyInAccount(clientMoney),
 	password(password){}
 
-Account::~Account(){}
+Account::~Account() = default;

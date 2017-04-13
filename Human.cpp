@@ -7,7 +7,7 @@ Human::Human(const std::string& name,
 	const int& pesel) : id({ name,surname,pesel }) {}
 
 
-Human::~Human(){}
+Human::~Human() = default;
 
 int Human::getPesel() const
 {

@@ -6,11 +6,13 @@
 //std::condition_variable cond;
 //std::mutex mu;
 
-Bank::~Bank(){}
+
+Bank::~Bank() = default;
 
 CreditCard Bank::createAccount(const Human& human, const std::string& password)
 {
 	long long numberCard = newNumbersCards.back();
+	newNumbersCards.pop_back();
 	CreditCard creditCard(numberCard, human.getName(), human.getSurname(), "Visa", "12/22");
 	auto account = std::make_unique<Account>(numberCard, 700, password );															
 	listOfAccount.insert(std::make_pair(numberCard, std::move(account)));

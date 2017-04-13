@@ -1,6 +1,4 @@
 #pragma once
-#include <memory>
-
 
 class Money
 {
@@ -8,7 +6,7 @@ public:
 	Money(const int&, const double&);
 	Money(const double&);
 	Money(const Money&) = delete;
-	Money(Money&&) :value(std::move(value)) {};
+	Money(Money&&);
 	double getNominalValue() const;
 	int getValue() const;
 	Money &operator=(const Money&) = delete;
@@ -35,7 +33,7 @@ namespace cantor
 }
 
 template<typename BeforeExchangeMoney, typename AfterExchangeMoney>
-decltype(auto) cantor::exchangeMoney(BeforeExchangeMoney&& moneyToExchange)
+decltype(auto) cantor::exchangeMoney(BeforeExchangeMoney&& moneyToExchange) 
 {
 	AfterExchangeMoney afterExchangeMoney;
 	return AfterExchangeMoney(moneyToExchange.getValue()*moneyToExchange.getNominalValue() / afterExchangeMoney.getNominalValue());

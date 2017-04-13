@@ -4,7 +4,7 @@
 
 Client::Client(const Human&& human) : Human(std::move(human)), creditCard(0,"","","",""), passwordToAccount("") {}
 
-Client::~Client() {}
+Client::~Client() = default;
 
 void Client::setCreditCard(const CreditCard& newCreditCard, const std::string& generatedPasswordToAccount)
 {

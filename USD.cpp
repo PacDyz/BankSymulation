@@ -1,11 +1,14 @@
 #include "stdafx.h"
 #include "USD.h"
+#include <memory>
 
 USD::USD() :Money(0.9) {}
 
 USD::USD(const int& value ): Money(value){}
 
-USD::~USD(){}
+USD::USD(USD&& money) : Money(std::move(money)) {}
+
+USD::~USD() = default;
 
 USD &USD::operator+=(USD&& euro)
 {

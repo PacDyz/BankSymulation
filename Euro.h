@@ -6,7 +6,7 @@ class Euro : public Money
 public:
 	Euro();
 	Euro(const int&);
-	Euro(Euro&& money) : Money(std::move(money)) {};
+	Euro(Euro&& money);
 	bool operator==(const Euro&) const;
 	Euro &operator+=(Euro&&);
 	Euro &operator-=(Euro&&);

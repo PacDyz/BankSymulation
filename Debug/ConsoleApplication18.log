@@ -1,12 +1,12 @@
 ﻿  ConsoleApplication18.cpp
-c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(39): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
   c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\eurotest.h(31): note: see reference to function template instantiation 'decltype(auto) cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
           with
           [
               BeforeExchangeMoney=Euro
           ]
-c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\bank.h(25): note: see reference to function template instantiation 'Company::Company<Euro>(T &&,const std::string &)' being compiled
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\bank.h(24): note: see reference to function template instantiation 'Company::Company<Euro>(T &&,const std::string &)' being compiled
           with
           [
               T=Euro
@@ -23,8 +23,10 @@ c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\compa
               _Ty=Bank
           ]
   Company.cpp
-c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.cpp(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Bank.cpp
+  Generating Code...
+  Compiling...
+  TravelAgency.cpp
   Generating Code...
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)

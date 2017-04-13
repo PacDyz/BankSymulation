@@ -4,7 +4,7 @@
 Worker::Worker( std::shared_ptr<Human> client, const int& salary) : client(client), salary(salary){}
 
 
-Worker::~Worker(){}
+Worker::~Worker() = default;
 
 void Worker::changeSalary(int newSalary)
 {

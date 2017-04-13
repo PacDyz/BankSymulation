@@ -12,7 +12,7 @@ CreditCard::CreditCard(const long long& numberCard,
 	typeOfCreditCard(typeOfCreditCard),
 	expiryDate(expiryDate) {}
 
-CreditCard::~CreditCard(){}
+CreditCard::~CreditCard() = default;
 
 void CreditCard::operator=(const CreditCard& creditCard) {
 	numberCard = creditCard.numberCard;  
