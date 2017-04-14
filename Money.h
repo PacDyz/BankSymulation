@@ -6,7 +6,7 @@ public:
 	Money(const int&, const double&);
 	Money(const double&);
 	Money(const Money&) = delete;
-	Money(Money&&);
+	Money(const Money&&);
 	double getNominalValue() const;
 	int getValue() const;
 	Money &operator=(const Money&) = delete;

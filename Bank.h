@@ -5,9 +5,11 @@ class Bank : public Company
 {
 public:
 	template<typename T>
-	Bank(T&&, const std::string&);
+	Bank(const T&&, const std::string&);
 	template<>
-	Bank(int&& capital, const std::string& mainOffice);
+	Bank(const int&&, const std::string&);
+	void moveAccount(std::map<long long, std::unique_ptr<Account>>&&);
+	void setBank(Bank&&);
 	void addClient(const Human&);
 	void checkNumberAvailableCard();
 	CreditCard createAccount(const Human&, const std::string&);
@@ -20,13 +22,13 @@ private:
 };
 
 template<typename T>
-Bank::Bank(T&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice), countNumbersCards(0)
+Bank::Bank(const T&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice), countNumbersCards(0)
 {
 	newNumbersCards = std::move(generator::generateNumberCard(1000000000000000));
 }
 
 template<>
-Bank::Bank(int&& capital, const std::string& mainOffice) : Company(std::move(capital), mainOffice), countNumbersCards(0)
+Bank::Bank(const int&& capital, const std::string& mainOffice) : Company(std::move(capital), mainOffice), countNumbersCards(0)
 {
 	newNumbersCards = std::move(generator::generateNumberCard(1000000000000000));
 }

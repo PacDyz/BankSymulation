@@ -9,7 +9,7 @@ public:
 	void changeSalary(int salary);
 	~Worker();
 private:
-	std::shared_ptr<Human> client;
+	std::shared_ptr<Human> human;
 	int salary;
 };
 

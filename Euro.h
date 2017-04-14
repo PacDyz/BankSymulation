@@ -6,10 +6,10 @@ class Euro : public Money
 public:
 	Euro();
 	Euro(const int&);
-	Euro(Euro&& money);
+	Euro(Euro&&);
 	bool operator==(const Euro&) const;
-	Euro &operator+=(Euro&&);
-	Euro &operator-=(Euro&&);
+	Euro &operator+=(const Euro&&);
+	Euro &operator-=(const Euro&&);
 	Euro &operator=(const int&);
 	~Euro();
 

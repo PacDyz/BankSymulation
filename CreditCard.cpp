@@ -7,10 +7,10 @@ CreditCard::CreditCard(const long long& numberCard,
 	const std::string& surname,
 	const std::string& typeOfCreditCard,
 	const std::string& expiryDate) : numberCard(numberCard),
-	name(name),
-	surname(surname),
-	typeOfCreditCard(typeOfCreditCard),
-	expiryDate(expiryDate) {}
+	name( name ),
+	surname( surname ),
+	typeOfCreditCard( typeOfCreditCard ),
+	expiryDate( expiryDate ) {}
 
 CreditCard::~CreditCard() = default;
 

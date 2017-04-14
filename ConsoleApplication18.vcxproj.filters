@@ -84,6 +84,9 @@
     <ClInclude Include="TravelAgency.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="travelAgencyTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

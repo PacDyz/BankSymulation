@@ -6,29 +6,29 @@ USD::USD() :Money(0.9) {}
 
 USD::USD(const int& value ): Money(value){}
 
-USD::USD(USD&& money) : Money(std::move(money)) {}
+USD::USD(const USD&& usd) : Money(std::move(usd)) {}
 
 USD::~USD() = default;
 
-USD &USD::operator+=(USD&& euro)
+USD &USD::operator+=(const USD&& usd)
 {
-	value += euro.value;
+	value += usd.value;
 	return *this;
 }
 
-USD &USD::operator-=(USD&& euro)
+USD &USD::operator-=(const USD&& usd)
 {
-	value -= euro.value;
+	value -= usd.value;
 	return *this;
 }
 
-bool USD::operator==(const USD& euro) const
+bool USD::operator==(const USD& usd) const
 {
-	return value == euro.value;
+	return value == usd.value;
 }
 
-USD &USD::operator=(const int& newMoney)
+USD &USD::operator=(const int& newUSD)
 {
-	value = newMoney;
+	value = newUSD;
 	return *this;
 }

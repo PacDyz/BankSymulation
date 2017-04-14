@@ -13,13 +13,13 @@ protected:
 
 void clientTest::SetUp()
 {
-	client = std::make_shared<Client>(Human("Karol", "Olejniczak", 783458));
+	client = std::make_shared<Client>(Human{ "Karol", "Olejniczak", 783458 });
 }
 
 TEST_F(clientTest, shouldSetCreditCard)
 {
 //	Account account{ 500 };
-	client->setCreditCard(CreditCard(342342, "Karol", "Olejniczak", "Visa", "10/22"), "password");
+	client->setCreditCard(CreditCard{ 342342, "Karol", "Olejniczak", "Visa", "10/22" }, "password");
 }
 TEST_F(clientTest, shouldGetPesel)
 {
@@ -27,9 +27,9 @@ TEST_F(clientTest, shouldGetPesel)
 }
 TEST_F(clientTest, shouldGetHuman)
 {
-	std::string name(client->getName());
-	std::string surname(client->getSurname());
-	int pesel(client->getPesel());
+	std::string name{ client->getName() };
+	std::string surname{ client->getSurname() };
+	int pesel{ client->getPesel() };
 	EXPECT_EQ("Karol", name);
 	EXPECT_EQ("Olejniczak", surname);
 	EXPECT_EQ(783458, pesel);
@@ -40,7 +40,7 @@ TEST_F(clientTest, schouldGetEmptyPassword)
 }
 TEST_F(clientTest, schouldGetPassword)
 {
-	client->setCreditCard(CreditCard(342342, "Karol", "Olejniczak", "Visa", "10/22"), "password");
+	client->setCreditCard( CreditCard{342342, "Karol", "Olejniczak", "Visa", "10/22"}, "password" );
 	EXPECT_EQ("password", client->getPassword());
 }
 TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithoutCreditCard)
@@ -49,6 +49,6 @@ TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithoutCreditCard)
 }
 TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithCreditCard)
 {
-	client->setCreditCard(CreditCard(342342, "Karol", "Olejniczak", "Visa", "10/22"), "password");
+	client->setCreditCard( CreditCard{342342, "Karol", "Olejniczak", "Visa", "10/22"}, "password" );
 	std::cout << client;
 }

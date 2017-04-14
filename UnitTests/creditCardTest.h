@@ -27,6 +27,6 @@ TEST_F(creditCardTest, schouldGetBasicInformationAboutCreditCard)
 }
 TEST(cardTest, schouldDisplayInformationAboutCreditCard)
 {
-	CreditCard newCreditCard(346554645656464, "Karol", "Olejniczak", "Visa", "19/18");
+	CreditCard newCreditCard{ 346554645656464, "Karol", "Olejniczak", "Visa", "19/18" };
 	std::cout << newCreditCard;
 }

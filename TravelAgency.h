@@ -5,16 +5,17 @@ class TravelAgency : public Company
 {
 public:
 	template<typename T>
-	TravelAgency(T&&, const std::string&);
+	TravelAgency(const T&&, const std::string&);
 	template<>
-	TravelAgency(int&& capital, const std::string& mainOffice);
+	TravelAgency(const int&& capital, const std::string& mainOffice);
+	void addClient(const Human& human);
 	~TravelAgency();
 };
 
 
 
 template<typename T>
-TravelAgency::TravelAgency(T&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice) {}
+TravelAgency::TravelAgency(const T&& capital, const std::string& mainOffice) :Company(std::move(capital), mainOffice) {}
 
 template<>
-TravelAgency::TravelAgency(int&& capital, const std::string& mainOffice) : Company(std::move(capital), mainOffice)  {}
+TravelAgency::TravelAgency(const int&& capital, const std::string& mainOffice) : Company(std::move(capital), mainOffice)  {}

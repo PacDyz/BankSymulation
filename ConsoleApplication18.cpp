@@ -10,6 +10,7 @@
 #include "UnitTests/accountTest.h"
 #include "UnitTests/creditCardTest.h"
 #include "UnitTests/usdTest.h"
+#include "travelAgencyTest.h"
 
 
 int main(int argc, char **argv) {

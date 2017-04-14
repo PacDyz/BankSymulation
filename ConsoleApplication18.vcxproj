@@ -154,6 +154,7 @@
     <ClInclude Include="Euro.h" />
     <ClInclude Include="Money.h" />
     <ClInclude Include="TravelAgency.h" />
+    <ClInclude Include="travelAgencyTest.h" />
     <ClInclude Include="UnitTests\accountTest.h" />
     <ClInclude Include="UnitTests\bankTest.h" />
     <ClInclude Include="UnitTests\clientTest.h" />

@@ -14,7 +14,7 @@ CreditCard Bank::createAccount(const Human& human, const std::string& password)
 	long long numberCard = newNumbersCards.back();
 	newNumbersCards.pop_back();
 	CreditCard creditCard(numberCard, human.getName(), human.getSurname(), "Visa", "12/22");
-	auto account = std::make_unique<Account>(numberCard, 700, password );															
+	auto account = std::make_unique<Account>( numberCard, 700, password );
 	listOfAccount.insert(std::make_pair(numberCard, std::move(account)));
 	return creditCard;
 }
@@ -33,7 +33,7 @@ void Bank::checkNumberAvailableCard() {
 }
 void Bank::addClient(const Human& human)
 {
-	//std::thread t1(&Bank::check, this);
+	//std::thread t1(&Bank::checkNumberAvailableCard, this);
 	checkNumberAvailableCard();
 	//std::promise<std::string> p;
 	//auto password = p.get_future();
@@ -43,6 +43,7 @@ void Bank::addClient(const Human& human)
 	//t1.join();
 	//t5.join();
 	CreditCard newCreditCard = createAccount(human, password);
+	//std::string password = f.get();
 	//auto fu = std::async(std::launch::async, &Bank::createAccount, this,  human, password);
 	//CreditCard newCreditCard;
 	//std::thread t3(&Bank::createAccount, this, human, password, std::ref(newCreditCard));
@@ -53,4 +54,18 @@ void Bank::addClient(const Human& human)
 	//t2.join();
 	client->setCreditCard(newCreditCard, password);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
+}
+void Bank::moveAccount(std::map<long long, std::unique_ptr<Account>>&& listOfAccount)
+{
+	listOfAccount.insert(std::make_move_iterator(listOfAccount.begin()), std::make_move_iterator(listOfAccount.end())); // c++17 this->listOfAccount.merge(listOfAccount);
+	listOfAccount.clear();
+}
+void Bank::setBank(Bank&& bank)
+{
+	std::thread t1(&Bank::moveAccount, this, std::move(bank.listOfAccount));
+	std::thread t2(&Company::setCompany, this, std::move(bank.capital), std::move(bank.mainOffice), std::move(bank.listOfClients), std::move(bank.listOfWorkers));
+	if (newNumbersCards < bank.newNumbersCards)
+		newNumbersCards = std::move(bank.newNumbersCards);
+	t1.join();
+	t2.join();
 }

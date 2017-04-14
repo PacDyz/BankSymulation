@@ -1,32 +1,25 @@
-﻿  ConsoleApplication18.cpp
+﻿  USD.cpp
+  Euro.cpp
+  Generating Code...
+  Compiling...
+  ConsoleApplication18.cpp
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(39): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
   c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\eurotest.h(31): note: see reference to function template instantiation 'decltype(auto) cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
           with
           [
               BeforeExchangeMoney=Euro
           ]
-c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\bank.h(24): note: see reference to function template instantiation 'Company::Company<Euro>(T &&,const std::string &)' being compiled
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(44): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\bank.h(26): note: see reference to function template instantiation 'Company::Company<Euro>(const T &&,const std::string &)' being compiled
           with
           [
               T=Euro
           ]
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(1630): note: see reference to function template instantiation 'Bank::Bank<_Ty>(T &&,const std::string &)' being compiled
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\banktest.h(136): note: see reference to function template instantiation 'Bank::Bank<Euro>(const T &&,const std::string &)' being compiled
           with
           [
-              _Ty=Euro,
               T=Euro
           ]
-  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\banktest.h(13): note: see reference to function template instantiation 'std::unique_ptr<Bank,std::default_delete<_Ty>> std::make_unique<Bank,Euro,const char(&)[13]>(Euro &&,const char (&)[13])' being compiled
-          with
-          [
-              _Ty=Bank
-          ]
-  Company.cpp
-  Bank.cpp
-  Generating Code...
-  Compiling...
-  TravelAgency.cpp
   Generating Code...
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)

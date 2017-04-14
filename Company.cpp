@@ -6,8 +6,7 @@
 #include <random>
 #include <numeric>
 #include <iostream>
-//void Company::pimpl_deleter::operator()(Company::pImpl*ptr) const { delete ptr; }
-//auto deleter = [](pImpl *p) {delete p; };
+#include <thread>
 
 std::string generator::generatePassword() 
 {
@@ -37,7 +36,7 @@ int Company::getNumberOfClients() const
 void Company::employWorker(const Human& human)
 {
 	auto worker = std::make_unique<Worker>(std::make_shared<Human>(human), 3500);
-	listOfWorkers.insert(std::make_pair(worker->getPesel(), std::move(worker)));
+	listOfWorkers.insert(std::make_pair( worker->getPesel(), std::move(worker) ) );
 }
 
 void Company::removeClient(const int& pesel)
@@ -71,6 +70,27 @@ void Company::displayAllClients() const
 	for (const auto& itr : listOfClients)
 		std::cout << itr.second;
 }
-
+void Company::moveClients(std::map<int, std::shared_ptr<Client>>&& listOfClients)
+{
+	this->listOfClients.insert(std::make_move_iterator(listOfClients.begin()), std::make_move_iterator(listOfClients.end()));
+	listOfClients.clear();
+}
+void Company::moveWorkers(std::map<int, std::unique_ptr<Worker>>&& listOfWorkers)
+{
+	this->listOfWorkers.insert(std::make_move_iterator(listOfWorkers.begin()), std::make_move_iterator(listOfWorkers.end()));
+	listOfWorkers.clear();
+}
+void Company::setCompany(const int&& capital, 
+						const std::string&& mainOffice,
+						std::map<int, std::shared_ptr<Client>>&& listOfClients,
+						std::map<int, std::unique_ptr<Worker>>&& listOfWorkers)
+{
+	std::thread t1(&Company::moveClients, this, std::move(listOfClients));
+	std::thread t2(&Company::moveWorkers, this, std::move(listOfWorkers));
+	this->capital += capital;
+	this->office = mainOffice;
+	t1.join();
+	t2.join();
+}
 
 Company::~Company() = default;

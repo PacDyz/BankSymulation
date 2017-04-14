@@ -2,7 +2,7 @@
 #include "Money.h"
 #include <memory>
 
-Money::Money(Money&&) :value(std::move(value)) {}
+Money::Money(const Money&&) :value(std::move(value)) {}
 
 int Money::getValue() const
 {
