@@ -20,8 +20,7 @@ CreditCard Bank::createAccount(const Human& human, const std::string& password)
 }
 void Bank::fillInAvailableNumberCard()
 {
-	countNumbersCards += 100;
-	newNumbersCards = std::move(generator::generateNumberCard(1000000000000000 + countNumbersCards));
+	newNumbersCards = std::move(generator::generateNumberCard());
 }
 void Bank::checkNumberAvailableCard() {
 	if (newNumbersCards.empty())
@@ -69,3 +68,17 @@ void Bank::setBank(Bank&& bank)
 	t1.join();
 	t2.join();
 }
+
+auto Bank::findAccount(const int& numberCard) const
+{
+	return listOfAccount.find(numberCard);
+}
+
+/*void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& numberCard)
+{
+	auto itr = findAccount(numberCard);
+	if (itr != std::end(listOfAccount))
+		itr->second->addMoneyToAccount(std::move(newMoneyToAccount));
+	else
+		std::cout << "Bad number credit card" << std::endl;												// maybe throw exception.
+}*/

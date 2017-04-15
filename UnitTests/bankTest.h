@@ -146,6 +146,10 @@ TEST_F(bankTest, schouldMoveBank)
 		bank1.addClient(human);
 	}
 	bank1.setBank(std::move(bank2));
-	//bank1.displayAllClients();
-
 }
+
+/*TEST_F(bankTest, schouldAddMoneyToClientAccount)
+{
+	Human human{ "Karol", "Olejniczak", 963748234 };
+	bank->addClient(human);
+}*/

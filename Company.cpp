@@ -19,6 +19,18 @@ std::string generator::generatePassword()
 	}
 	return password;
 }
+
+std::vector<long long> generator::generateNumberCard()
+{
+	std::vector<long long> vec(100);
+	std::iota(std::begin(vec), std::end(vec), counterNumbersCards);
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::shuffle(std::begin(vec), std::end(vec), g);
+	counterNumbersCards += 100;
+	return vec;
+}
+
 bool Company::findClient(const int& pesel) const
 {
 	auto itr = listOfClients.find(pesel);
@@ -55,15 +67,7 @@ void Company::setCapital(const int& newCapital)
 	capital = newCapital;
 }
 
-std::vector<long long> generator::generateNumberCard(const long long& startNumber)
-{
-	std::vector<long long> vec(100);
-	std::iota(std::begin(vec), std::end(vec), startNumber);
-	std::random_device rd;
-	std::mt19937 g(rd());
-	std::shuffle(std::begin(vec), std::end(vec), g);
-	return vec;
-}
+
 
 void Company::displayAllClients() const
 {
@@ -88,7 +92,7 @@ void Company::setCompany(const int&& capital,
 	std::thread t1(&Company::moveClients, this, std::move(listOfClients));
 	std::thread t2(&Company::moveWorkers, this, std::move(listOfWorkers));
 	this->capital += capital;
-	this->office = mainOffice;
+	this->office.emplace_back(std::move(mainOffice));
 	t1.join();
 	t2.join();
 }

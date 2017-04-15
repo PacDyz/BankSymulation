@@ -6,7 +6,8 @@
 #include <vector>
 namespace generator
 {
-	std::vector<long long> generateNumberCard(const long long&);                    // change this function, create class GeneratorNumberCard, and safe state, card in each bank schould have other number.
+	static long long counterNumbersCards = 1000000000000000;
+	std::vector<long long> generateNumberCard();                    // change this function, create class GeneratorNumberCard, and safe state, card in each bank schould have other number.
 	std::string generatePassword();
 }
 class Company
@@ -35,7 +36,7 @@ public:
 protected:
 	int capital;
 	std::string mainOffice;
-	std::string office;
+	std::vector<std::string> office;
 	std::map<int, std::shared_ptr<Client>> listOfClients;
 	std::map<int, std::unique_ptr<Worker>> listOfWorkers;
 };

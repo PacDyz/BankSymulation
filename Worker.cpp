@@ -6,7 +6,7 @@ Worker::Worker( std::shared_ptr<Human> human, const int& salary) : human(human),
 
 Worker::~Worker() = default;
 
-void Worker::changeSalary(int newSalary)
+void Worker::changeSalary(const int& newSalary)
 {
 	salary = newSalary;
 }
