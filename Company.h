@@ -4,10 +4,12 @@
 #include "Euro.h"
 #include "Worker.h"
 #include <vector>
+
 namespace generator
 {
 	static long long counterNumbersCards = 1000000000000000;
-	std::vector<long long> generateNumberCard();                    // change this function, create class GeneratorNumberCard, and safe state, card in each bank schould have other number.
+	static int getRandomNumber(const int& begin, const int& end);
+	std::vector<long long> generateNumberCard();
 	std::string generatePassword();
 }
 class Company

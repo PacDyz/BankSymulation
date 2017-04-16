@@ -8,14 +8,22 @@
 #include <iostream>
 #include <thread>
 
+int generator::getRandomNumber(const int& begin, const int& end)
+{
+	std::uniform_int_distribution<> uid(begin, end);
+	static std::random_device rd;
+	static std::mt19937 g(rd());
+	unsigned int randomNumber = uid(g);
+	return randomNumber;
+}
+
 std::string generator::generatePassword() 
 {
-	std::srand(static_cast<unsigned int>(time(nullptr)));
-	unsigned int lenghtPassword = std::rand() % 15 + 5;
 	std::string password;
-	for (unsigned int i = 0; i < lenghtPassword; ++i)
+	for (unsigned int i = 0; i < generator::getRandomNumber(5, 15); ++i)
 	{
-		password.push_back(std::rand() % 127);
+		std::uniform_int_distribution<> uidChar(0, 100);
+		password.push_back(generator::getRandomNumber(0, 127));
 	}
 	return password;
 }
