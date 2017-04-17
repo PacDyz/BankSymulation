@@ -33,3 +33,20 @@ std::ostream &operator<<(std::ostream& str, std::shared_ptr<Client> client)
 		str << "Client credit card: Client doesn't have credit card" << std::endl;
 	return str;
 }
+
+std::ostream &operator<<(std::ostream& str, const Client& client)
+{
+	str << "Client name: " << client.getName() << std::endl;
+	str << "Client surname: " << client.getSurname() << std::endl;
+	str << "Client pesel: " << client.getPesel() << std::endl;
+	if (client.getCreditCard().getNumberCard() != 0)
+		str << "Client credit card: " << client.getCreditCard().getNumberCard() << std::endl;
+	else
+		str << "Client credit card: Client doesn't have credit card" << std::endl;
+	return str;
+}
+
+long long Client::getNumberCreditCard() const
+{
+	return creditCard.getNumberCard();
+}

@@ -7,6 +7,7 @@ class Client : public Human
 public:
 	Client(const Human&&);
 	CreditCard getCreditCard() const;
+	long long getNumberCreditCard() const;
 	std::string getPassword() const;
 	void setCreditCard(const CreditCard&, const std::string&);
 	~Client();
@@ -14,6 +15,8 @@ private:
 	CreditCard creditCard;
 	std::string passwordToAccount;
 };
+
+std::ostream &operator<<(std::ostream& str, const Client& client);
 
 std::ostream &operator<<(std::ostream& str, std::shared_ptr<Client>);
 

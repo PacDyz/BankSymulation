@@ -2,6 +2,7 @@
 #include "gtest\gtest.h"
 #include "Bank.h"
 #include <memory>
+#include <iostream>
 class bankTest : public testing::Test
 {
 protected:
@@ -32,7 +33,8 @@ TEST_F(bankTest, shouldFindClient)
 	bank->addClient(human1);
 	bank->addClient(human2);
 	bank->addClient(human3);
-	ASSERT_TRUE(bank->findClient(963748234));
+	auto client = bank->findClient(963748234);
+	EXPECT_EQ(963748234, client->getPesel());
 }
 
 TEST_F(bankTest, shouldGetMainOffice)
@@ -52,21 +54,25 @@ TEST_F(bankTest, shouldGetNumberOfClients)
 TEST_F(bankTest, shouldAddNewWorker)
 {
 	Client client1{ Human{ "Karol", "Olejniczak", 963748234 } };
-	bank->employWorker(client1);
+	auto client = std::make_shared<Client>(client1);
+	bank->employWorker(client);
 }
 
 TEST_F(bankTest, shouldAddNewWorkers)
 {
 	Client client1{ Human{ "Karol", "Olejniczak", 963748234 } };
 	Client client2{ Human{ "Jacek", "Godlewski", 963748233 } };
-	bank->employWorker(client1);
-	bank->employWorker(client2);
+	auto client1ptr = std::make_shared<Client>(client1);
+	auto client2ptr = std::make_shared<Client>(client2);
+	bank->employWorker(client1ptr);
+	bank->employWorker(client2ptr);
 }
 
 TEST_F(bankTest, shouldRemoveWorker)
 {
 	Client client1{ Human{ "Karol", "Olejniczak", 963748234 } };
-	bank->employWorker(client1);
+	auto client = std::make_shared<Client>(client1);
+	bank->employWorker(client);
 	bank->removeWorker(963748234);
 }
 
@@ -74,11 +80,14 @@ TEST_F(bankTest, shouldRemoveWorkers)
 {
 	Client client1{ Human{"Karol", "Olejniczak", 963748234 } };
 	Client client2{ Human{"Jacek", "Godlewski", 963748233} };
-	bank->employWorker(client1);
-	bank->employWorker(client2);
+	auto client1ptr1 = std::make_shared<Client>(client1);
+	auto client2ptr = std::make_shared<Client>(client2);
+	bank->employWorker(client1ptr1);
+	bank->employWorker(client2ptr);
 	bank->removeWorker(963748234);
 	bank->removeWorker(963748233);
-	bank->employWorker(client1);
+	auto client1ptr2 = std::make_shared<Client>(client1);
+	bank->employWorker(client1ptr2);
 	bank->removeWorker(963748234);
 }
 TEST_F(bankTest, shouldRemoveClients)
@@ -148,8 +157,10 @@ TEST_F(bankTest, schouldMoveBank)
 	bank1.setBank(std::move(bank2));
 }
 
-/*TEST_F(bankTest, schouldAddMoneyToClientAccount)
+TEST_F(bankTest, schouldAddMoneyToClientAccount)
 {
 	Human human{ "Karol", "Olejniczak", 963748234 };
-	bank->addClient(human);
-}*/
+	/*auto client = bank->addClient(human);
+	bank->addMoneyToAccount(500, client.getNumberCreditCard());
+	bank->displayStateAccount(client.getNumberCreditCard());*/
+}

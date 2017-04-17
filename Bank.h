@@ -1,6 +1,7 @@
 #pragma once
 #include "Account.h"
 #include "Company.h"
+
 class Bank : public Company
 {
 public:
@@ -9,9 +10,10 @@ public:
 	template<>
 	Bank(const int&&, const std::string&);
 	void addClient(const Human&);
-	//void addMoneyToAccount(const int&&, const long long&);
-	auto findAccount(const int& numberCard) const;
+	void addMoneyToAccount(const int&&, const long long&);
+	auto findAccount(const long long& numberCard) const;
 	void moveAccount(std::map<long long, std::unique_ptr<Account>>&&);
+	void displayStateAccount(const long long&);
 	void setBank(Bank&&);
 	void checkNumberAvailableCard();
 	CreditCard createAccount(const Human&, const std::string&);

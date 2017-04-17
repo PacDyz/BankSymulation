@@ -39,11 +39,12 @@ std::vector<long long> generator::generateNumberCard()
 	return vec;
 }
 
-bool Company::findClient(const int& pesel) const
+std::shared_ptr<Client> Company::findClient(const int& pesel) const
 {
 	auto itr = listOfClients.find(pesel);
-	return itr != std::end(listOfClients);
+	return itr->second;
 }
+
 std::string Company::getMainOffice() const
 {
 	return mainOffice;
@@ -53,9 +54,9 @@ int Company::getNumberOfClients() const
 {
 	return listOfClients.size();
 }
-void Company::employWorker(const Human& human)
+void Company::employWorker( std::shared_ptr<Human> human)
 {
-	auto worker = std::make_unique<Worker>(std::make_shared<Human>(human), 3500);
+	auto worker = std::make_unique<Worker>(human, 3500);
 	listOfWorkers.insert(std::make_pair( worker->getPesel(), std::move(worker) ) );
 }
 

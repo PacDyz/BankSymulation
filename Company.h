@@ -23,10 +23,10 @@ public:
 					const std::string&&,
 					std::map<int, std::shared_ptr<Client>>&&,
 					std::map<int, std::unique_ptr<Worker>>&&);
-	bool findClient(const int&) const;
+	std::shared_ptr<Client> findClient(const int&) const;
 	int getNumberOfClients() const;
 	std::string getMainOffice() const;
-	void employWorker(const Human&);
+	void employWorker(std::shared_ptr<Human>);
 	void removeClient(const int&);
 	void removeWorker(const int&);
 	void setCapital(const int&);

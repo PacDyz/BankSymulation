@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Bank.h"
-#include <future>
 #include <iostream>
 #include <thread>
 //std::condition_variable cond;
@@ -28,6 +27,7 @@ void Bank::checkNumberAvailableCard() {
 		//t1 = std::thread(&Bank::fillInAvailableNumberCard, this);
 		//auto fut = std::async(std::launch::async, &Bank::fillInAvailableNumberCard, this);
 		fillInAvailableNumberCard();
+
 	}
 }
 void Bank::addClient(const Human& human)
@@ -47,7 +47,7 @@ void Bank::addClient(const Human& human)
 	//CreditCard newCreditCard;
 	//std::thread t3(&Bank::createAccount, this, human, password, std::ref(newCreditCard));
 	//t3.join();
-	auto client = std::make_unique<Client>(std::move(human));
+	std::unique_ptr<Client> client = std::make_unique<Client>(std::move(human));
 	//CreditCard newCreditCard = fu.get();
 	//std::thread t2(&Client::setCreditCard, *client, newCreditCard, password);						// change first argument...
 	//t2.join();
@@ -67,18 +67,30 @@ void Bank::setBank(Bank&& bank)
 		newNumbersCards = std::move(bank.newNumbersCards);
 	t1.join();
 	t2.join();
+	/*moveAccount(std::move(bank.listOfAccount));
+	setCompany(std::move(bank.capital), std::move(bank.mainOffice), std::move(bank.listOfClients), std::move(bank.listOfWorkers));
+	if (newNumbersCards < bank.newNumbersCards)
+		newNumbersCards = std::move(bank.newNumbersCards);*/
 }
 
-auto Bank::findAccount(const int& numberCard) const
+auto Bank::findAccount(const long long& numberCard) const
 {
 	return listOfAccount.find(numberCard);
 }
 
-/*void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& numberCard)
+void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& numberCard)
 {
 	auto itr = findAccount(numberCard);
 	if (itr != std::end(listOfAccount))
 		itr->second->addMoneyToAccount(std::move(newMoneyToAccount));
 	else
 		std::cout << "Bad number credit card" << std::endl;												// maybe throw exception.
-}*/
+}
+void Bank::displayStateAccount(const long long& numberCard)
+{
+	auto itr = findAccount(numberCard);
+	if (itr != std::end(listOfAccount))
+		itr->second->displayNumberMoney();
+	else
+		std::cout << "Bad number credit card" << std::endl;
+}
