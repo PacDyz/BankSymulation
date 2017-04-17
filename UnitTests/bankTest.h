@@ -163,4 +163,8 @@ TEST_F(bankTest, schouldAddMoneyToClientAccount)
 	/*auto client = bank->addClient(human);
 	bank->addMoneyToAccount(500, client.getNumberCreditCard());
 	bank->displayStateAccount(client.getNumberCreditCard());*/
+	bank->addClient(human);
+	auto client = bank->findClient(963748234);
+	bank->addMoneyToAccount(500, client->getNumberCreditCard());
+	bank->displayStateAccount(client->getNumberCreditCard()); 
 }
