@@ -15,9 +15,6 @@ private:
 	CreditCard creditCard;
 	std::string passwordToAccount;
 };
-
-std::ostream &operator<<(std::ostream& str, const Client& client);
-
 std::ostream &operator<<(std::ostream& str, std::shared_ptr<Client>);
 
 

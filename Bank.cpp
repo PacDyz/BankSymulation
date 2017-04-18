@@ -47,7 +47,7 @@ void Bank::addClient(const Human& human)
 	//CreditCard newCreditCard;
 	//std::thread t3(&Bank::createAccount, this, human, password, std::ref(newCreditCard));
 	//t3.join();
-	std::unique_ptr<Client> client = std::make_unique<Client>(std::move(human));
+	auto client = std::make_unique<Client>(std::move(human));
 	//CreditCard newCreditCard = fu.get();
 	//std::thread t2(&Client::setCreditCard, *client, newCreditCard, password);						// change first argument...
 	//t2.join();
@@ -84,7 +84,7 @@ void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& num
 	if (itr != std::end(listOfAccount))
 		itr->second->addMoneyToAccount(std::move(newMoneyToAccount));
 	else
-		std::cout << "Bad number credit card" << std::endl;												// maybe throw exception.
+		std::cout << "Bad number credit card" << "\n";												// maybe throw exception.
 }
 void Bank::displayStateAccount(const long long& numberCard)
 {
@@ -92,5 +92,5 @@ void Bank::displayStateAccount(const long long& numberCard)
 	if (itr != std::end(listOfAccount))
 		itr->second->displayNumberMoney();
 	else
-		std::cout << "Bad number credit card" << std::endl;
+		std::cout << "Bad number credit card" << "\n";
 }

@@ -160,11 +160,25 @@ TEST_F(bankTest, schouldMoveBank)
 TEST_F(bankTest, schouldAddMoneyToClientAccount)
 {
 	Human human{ "Karol", "Olejniczak", 963748234 };
-	/*auto client = bank->addClient(human);
-	bank->addMoneyToAccount(500, client.getNumberCreditCard());
-	bank->displayStateAccount(client.getNumberCreditCard());*/
 	bank->addClient(human);
 	auto client = bank->findClient(963748234);
 	bank->addMoneyToAccount(500, client->getNumberCreditCard());
 	bank->displayStateAccount(client->getNumberCreditCard()); 
+}
+
+TEST_F(bankTest, schouldMoveBankWithAbout5900Clients)
+{
+	Bank bank1{ Euro{ 10000 }, "Zielona Gora" };
+	for (int i = 0; i < 101; ++i)
+	{
+		Human human{ "Karol", "Olejniczak", i };
+		bank1.addClient(human);
+	}
+	Bank bank2{ Euro{ 7000 }, "Wroclaw" };
+	for (int i = 101; i < 6020; ++i)
+	{
+		Human human{ "Karol", "Olejniczak", i };
+		bank1.addClient(human);
+	}
+	bank1.setBank(std::move(bank2));
 }
