@@ -20,12 +20,7 @@ protected:
 	int value;
 	double nominalValue;
 };
-/*template<typename K, typename T>
-K &Money::operator=(T&& t)
-{
-	K k;
-	return K(t.getValue()*t.getNominalValue() / k.getNominalValue());
-}*/
+
 namespace cantor
 {
 	template<typename BeforeExchangeMoney, typename AfterExchangeMoney>

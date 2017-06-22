@@ -6,9 +6,6 @@ Human::Human(const std::string& name,
 	const std::string& surname,
 	const int& pesel) : id({ name,surname,pesel }) {}
 
-
-Human::~Human() = default;
-
 int Human::getPesel() const
 {
 	return id.pesel;
@@ -24,5 +21,6 @@ std::string Human::getSurname() const
 	return id.surname;
 }
 
+Human::~Human() = default;
 //Human::Human(std::unique_ptr<Human> human) :Human(human->getName(), human->getSurname(), human->getPesel()) {}
 

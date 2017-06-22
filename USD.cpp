@@ -8,8 +8,6 @@ USD::USD(const int& value ): Money(value){}
 
 USD::USD(const USD&& usd) : Money(std::move(usd)) {}
 
-USD::~USD() = default;
-
 USD &USD::operator+=(const USD&& usd)
 {
 	value += usd.value;
@@ -32,3 +30,5 @@ USD &USD::operator=(const int& newUSD)
 	value = newUSD;
 	return *this;
 }
+
+USD::~USD() = default;

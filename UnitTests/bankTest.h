@@ -157,7 +157,7 @@ TEST_F(bankTest, schouldMoveBank)
 	bank1.setBank(std::move(bank2));
 }
 
-TEST_F(bankTest, schouldAddMoneyToClientAccount)
+TEST_F(bankTest, schouldSetMoneyToClientAccount)
 {
 	Human human{ "Karol", "Olejniczak", 963748234 };
 	bank->addClient(human);

@@ -9,15 +9,15 @@ public:
 	Bank(const T&&, const std::string&);
 	template<>
 	Bank(const int&&, const std::string&);
-	void addClient(const Human&);
+	CreditCard createAccount(const Human&, const std::string&);
+	void addClient(const Human&) override;
 	void addMoneyToAccount(const int&&, const long long&);
+	void checkNumberAvailableCard();
+	void displayStateAccount(const long long&);
+	void fillInAvailableNumberCard();
 	auto findAccount(const long long& numberCard) const;
 	void moveAccount(std::map<long long, std::unique_ptr<Account>>&&);
-	void displayStateAccount(const long long&);
 	void setBank(Bank&&);
-	void checkNumberAvailableCard();
-	CreditCard createAccount(const Human&, const std::string&);
-	void fillInAvailableNumberCard();
 	~Bank();
 private:
 	std::map<long long, std::unique_ptr<Account>> listOfAccount;

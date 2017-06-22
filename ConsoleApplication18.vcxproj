@@ -177,7 +177,7 @@
     <ClCompile Include="CreditCard.cpp" />
     <ClCompile Include="Euro.cpp" />
     <ClCompile Include="Human.cpp" />
-    <ClCompile Include="ConsoleApplication18.cpp" />
+    <ClCompile Include="BankSymulation.cpp" />
     <ClCompile Include="Money.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

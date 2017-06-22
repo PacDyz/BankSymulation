@@ -12,9 +12,9 @@ public:
 	Human(const std::string&,
 		const std::string&,
 		const int&);
+	int getPesel() const;
 	std::string getName() const;
 	std::string getSurname() const;
-	int getPesel() const;
 	~Human();
 private:
 	Id id;

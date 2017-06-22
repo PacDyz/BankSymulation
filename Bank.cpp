@@ -8,6 +8,11 @@
 
 Bank::~Bank() = default;
 
+auto Bank::findAccount(const long long& numberCard) const
+{
+	return listOfAccount.find(numberCard);
+}
+
 CreditCard Bank::createAccount(const Human& human, const std::string& password)
 {
 	long long numberCard = newNumbersCards.back();
@@ -17,19 +22,7 @@ CreditCard Bank::createAccount(const Human& human, const std::string& password)
 	listOfAccount.insert(std::make_pair(numberCard, std::move(account)));
 	return creditCard;
 }
-void Bank::fillInAvailableNumberCard()
-{
-	newNumbersCards = std::move(generator::generateNumberCard());
-}
-void Bank::checkNumberAvailableCard() {
-	if (newNumbersCards.empty())
-	{
-		//t1 = std::thread(&Bank::fillInAvailableNumberCard, this);
-		//auto fut = std::async(std::launch::async, &Bank::fillInAvailableNumberCard, this);
-		fillInAvailableNumberCard();
 
-	}
-}
 void Bank::addClient(const Human& human)
 {
 	//std::thread t1(&Bank::checkNumberAvailableCard, this);
@@ -54,6 +47,40 @@ void Bank::addClient(const Human& human)
 	client->setCreditCard(newCreditCard, password);
 	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
 }
+
+void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& numberCard)
+{
+	auto itr = findAccount(numberCard);
+	if (itr != std::end(listOfAccount))
+		itr->second->addMoneyToAccount(std::move(newMoneyToAccount));
+	else
+		std::cout << "Bad number credit card" << "\n";												// maybe throw exception.
+}
+
+void Bank::checkNumberAvailableCard() {
+	if (newNumbersCards.empty())
+	{
+		//t1 = std::thread(&Bank::fillInAvailableNumberCard, this);
+		//auto fut = std::async(std::launch::async, &Bank::fillInAvailableNumberCard, this);
+		fillInAvailableNumberCard();
+
+	}
+}
+
+void Bank::displayStateAccount(const long long& numberCard)
+{
+	auto itr = findAccount(numberCard);
+	if (itr != std::end(listOfAccount))
+		itr->second->displayNumberMoney();
+	else
+		std::cout << "Bad number credit card" << "\n";
+}
+
+void Bank::fillInAvailableNumberCard()
+{
+	newNumbersCards = std::move(generator::generateNumberCard());
+}
+
 void Bank::moveAccount(std::map<long long, std::unique_ptr<Account>>&& listOfAccount)
 {
 	listOfAccount.insert(std::make_move_iterator(listOfAccount.begin()), std::make_move_iterator(listOfAccount.end())); // c++17 this->listOfAccount.merge(listOfAccount);
@@ -71,26 +98,4 @@ void Bank::setBank(Bank&& bank)
 	setCompany(std::move(bank.capital), std::move(bank.mainOffice), std::move(bank.listOfClients), std::move(bank.listOfWorkers));
 	if (newNumbersCards < bank.newNumbersCards)
 		newNumbersCards = std::move(bank.newNumbersCards);*/
-}
-
-auto Bank::findAccount(const long long& numberCard) const
-{
-	return listOfAccount.find(numberCard);
-}
-
-void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& numberCard)
-{
-	auto itr = findAccount(numberCard);
-	if (itr != std::end(listOfAccount))
-		itr->second->addMoneyToAccount(std::move(newMoneyToAccount));
-	else
-		std::cout << "Bad number credit card" << "\n";												// maybe throw exception.
-}
-void Bank::displayStateAccount(const long long& numberCard)
-{
-	auto itr = findAccount(numberCard);
-	if (itr != std::end(listOfAccount))
-		itr->second->displayNumberMoney();
-	else
-		std::cout << "Bad number credit card" << "\n";
 }

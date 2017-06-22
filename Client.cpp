@@ -2,14 +2,20 @@
 #include "Client.h"
 
 
-Client::Client(const Human&& human) : Human(std::move(human)), creditCard(0,"","","",""), passwordToAccount("") {}
+Client::Client(const Human&& human) : Human(std::move(human)), 
+									creditCard(0,"","","",""),
+									passwordToAccount("") {}
 
 Client::~Client() = default;
 
-void Client::setCreditCard(const CreditCard& newCreditCard, const std::string& generatedPasswordToAccount)
+CreditCard Client::getCreditCard() const
 {
-	creditCard = newCreditCard;
-	passwordToAccount = generatedPasswordToAccount;
+	return creditCard;
+}
+
+long long Client::getNumberCreditCard() const
+{
+	return creditCard.getNumberCard();
 }
 
 std::string Client::getPassword() const
@@ -17,9 +23,10 @@ std::string Client::getPassword() const
 	return passwordToAccount;
 }
 
-CreditCard Client::getCreditCard() const
+void Client::setCreditCard(const CreditCard& newCreditCard, const std::string& generatedPasswordToAccount)
 {
-	return creditCard;
+	creditCard = newCreditCard;
+	passwordToAccount = generatedPasswordToAccount;
 }
 
 std::ostream &operator<<(std::ostream& str, std::shared_ptr<Client> client)
@@ -32,10 +39,4 @@ std::ostream &operator<<(std::ostream& str, std::shared_ptr<Client> client)
 	else
 		str << "Client credit card: Client doesn't have credit card" << "\n";
 	return str;
-}
-
-
-long long Client::getNumberCreditCard() const
-{
-	return creditCard.getNumberCard();
 }

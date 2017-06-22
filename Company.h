@@ -23,17 +23,17 @@ public:
 					const std::string&&,
 					std::map<int, std::shared_ptr<Client>>&&,
 					std::map<int, std::unique_ptr<Worker>>&&);
-	std::shared_ptr<Client> findClient(const int&) const;
+	virtual void addClient(const Human&) = 0;
 	int getNumberOfClients() const;
 	std::string getMainOffice() const;
+	std::shared_ptr<Client> findClient(const int&) const;
+	void displayAllClients() const;
 	void employWorker(std::shared_ptr<Human>);
+	void moveClients(std::map<int, std::shared_ptr<Client>>&&);
+	void moveWorkers(std::map<int, std::unique_ptr<Worker>>&&);
 	void removeClient(const int&);
 	void removeWorker(const int&);
 	void setCapital(const int&);
-	void displayAllClients() const;
-	void moveClients(std::map<int, std::shared_ptr<Client>>&&);
-	void moveWorkers(std::map<int, std::unique_ptr<Worker>>&&);
-	virtual void addClient(const Human&) = 0;
 	virtual ~Company();
 protected:
 	int capital;

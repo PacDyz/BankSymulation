@@ -12,8 +12,6 @@ CreditCard::CreditCard(const long long& numberCard,
 	typeOfCreditCard( typeOfCreditCard ),
 	expiryDate( expiryDate ) {}
 
-CreditCard::~CreditCard() = default;
-
 void CreditCard::operator=(const CreditCard& creditCard) {
 	numberCard = creditCard.numberCard;  
 	name = creditCard.name;
@@ -52,3 +50,5 @@ std::ostream &operator<<(std::ostream& str, const CreditCard& creditCard)
 	str << "Expiry date: " << creditCard.getExpiryDate() << std::endl;
 	return str;
 }
+
+CreditCard::~CreditCard() = default;

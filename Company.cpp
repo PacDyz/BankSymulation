@@ -39,6 +39,11 @@ std::vector<long long> generator::generateNumberCard()
 	return vec;
 }
 
+int Company::getNumberOfClients() const
+{
+	return listOfClients.size();
+}
+
 std::shared_ptr<Client> Company::findClient(const int& pesel) const
 {
 	auto itr = listOfClients.find(pesel);
@@ -50,14 +55,28 @@ std::string Company::getMainOffice() const
 	return mainOffice;
 }
 
-int Company::getNumberOfClients() const
+
+void Company::displayAllClients() const
 {
-	return listOfClients.size();
+	for (const auto& itr : listOfClients)
+		std::cout << itr.second;
 }
+
 void Company::employWorker( std::shared_ptr<Human> human)
 {
 	auto worker = std::make_unique<Worker>(human, 3500);
 	listOfWorkers.insert(std::make_pair( worker->getPesel(), std::move(worker) ) );
+}
+
+void Company::moveClients(std::map<int, std::shared_ptr<Client>>&& listOfClients)
+{
+	this->listOfClients.insert(std::make_move_iterator(listOfClients.begin()), std::make_move_iterator(listOfClients.end()));
+	listOfClients.clear();
+}
+void Company::moveWorkers(std::map<int, std::unique_ptr<Worker>>&& listOfWorkers)
+{
+	this->listOfWorkers.insert(std::make_move_iterator(listOfWorkers.begin()), std::make_move_iterator(listOfWorkers.end()));
+	listOfWorkers.clear();
 }
 
 void Company::removeClient(const int& pesel)
@@ -76,23 +95,6 @@ void Company::setCapital(const int& newCapital)
 	capital = newCapital;
 }
 
-
-
-void Company::displayAllClients() const
-{
-	for (const auto& itr : listOfClients)
-		std::cout << itr.second;
-}
-void Company::moveClients(std::map<int, std::shared_ptr<Client>>&& listOfClients)
-{
-	this->listOfClients.insert(std::make_move_iterator(listOfClients.begin()), std::make_move_iterator(listOfClients.end()));
-	listOfClients.clear();
-}
-void Company::moveWorkers(std::map<int, std::unique_ptr<Worker>>&& listOfWorkers)
-{
-	this->listOfWorkers.insert(std::make_move_iterator(listOfWorkers.begin()), std::make_move_iterator(listOfWorkers.end()));
-	listOfWorkers.clear();
-}
 void Company::setCompany(const int&& capital, 
 						const std::string&& mainOffice,
 						std::map<int, std::shared_ptr<Client>>&& listOfClients,
