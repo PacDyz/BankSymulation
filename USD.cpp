@@ -2,11 +2,11 @@
 #include "USD.h"
 #include <memory>
 
-USD::USD() :Money{ 0.9 } {}
+USD::USD() :Money(0.9) {}
 
-USD::USD(const int& value) : Money{ value } {}
+USD::USD(const int& value ): Money(value){}
 
-USD::USD(const USD&& usd) : Money{ std::move(usd) } {}
+USD::USD(const USD&& usd) : Money(std::move(usd)) {}
 
 USD &USD::operator+=(const USD&& usd)
 {

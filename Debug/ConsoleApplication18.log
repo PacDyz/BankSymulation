@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 ﻿  stdafx.cpp
   Worker.cpp
   USD.cpp
   TravelAgency.cpp
   Money.cpp
   BankSymulation.cpp
+=======
+﻿  BankSymulation.cpp
+>>>>>>> parent of 2bbe0d9... Refactoring
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(34): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
   c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\eurotest.h(31): note: see reference to function template instantiation 'decltype(auto) cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
           with
@@ -21,6 +25,7 @@ c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\compa
           [
               T=Euro
           ]
+<<<<<<< HEAD
   Human.cpp
   Euro.cpp
   CreditCard.cpp
@@ -30,5 +35,7 @@ c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\compa
   Bank.cpp
   Account.cpp
   Generating Code...
+=======
+>>>>>>> parent of 2bbe0d9... Refactoring
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)

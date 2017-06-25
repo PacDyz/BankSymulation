@@ -2,9 +2,9 @@
 #include "Client.h"
 
 
-Client::Client(const Human&& human) : Human{ std::move(human) },
-										creditCard{ 0,"","","","" },
-										passwordToAccount{ "" } {}
+Client::Client(const Human&& human) : Human(std::move(human)), 
+									creditCard(0,"","","",""),
+									passwordToAccount("") {}
 
 Client::~Client() = default;
 
