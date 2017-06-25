@@ -18,6 +18,6 @@ void travelAgencyTest::SetUp()
 
 TEST_F(travelAgencyTest, schouldCreateClient)
 {
-	Human human{ "Karol", "Olejniczak", 963748234 };
+	Human human( "Karol", "Olejniczak", 963748234 );
 	travelAgency->addClient(human);
 }

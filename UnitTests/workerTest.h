@@ -10,8 +10,8 @@ protected:
 };
 void workerTest::SetUp()
 {
-	Human human{ "Karol", "Olejniczak", 783458 };
-	Client client{ std::move(human) };
+	Human human( "Karol", "Olejniczak", 783458 );
+	Client client( std::move(human) );
 	worker = std::make_unique<Worker>(std::make_shared<Client>(client), 3500);
 }
 

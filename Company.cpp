@@ -13,7 +13,7 @@ int generator::getRandomNumber(const int& begin, const int& end)
 	std::uniform_int_distribution<> uid(begin, end);
 	static std::random_device rd;
 	static std::mt19937 g(rd());
-	unsigned int randomNumber = uid(g);
+	unsigned int randomNumber(uid(g));
 	return randomNumber;
 }
 
@@ -64,7 +64,7 @@ void Company::displayAllClients() const
 
 void Company::employWorker( std::shared_ptr<Human> human)
 {
-	auto worker = std::make_unique<Worker>(human, 3500);
+	auto worker(std::make_unique<Worker>(human, 3500));
 	listOfWorkers.insert(std::make_pair( worker->getPesel(), std::move(worker) ) );
 }
 
