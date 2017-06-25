@@ -1,3 +1,34 @@
-﻿  Bank.cpp
+﻿  stdafx.cpp
+  Worker.cpp
+  USD.cpp
+  TravelAgency.cpp
+  Money.cpp
+  BankSymulation.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\money.h(34): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\eurotest.h(31): note: see reference to function template instantiation 'decltype(auto) cantor::exchangeMoney<Euro,USD>(BeforeExchangeMoney &&)' being compiled
+          with
+          [
+              BeforeExchangeMoney=Euro
+          ]
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.h(47): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\bank.h(28): note: see reference to function template instantiation 'Company::Company<Euro>(const T &&,const std::string &)' being compiled
+          with
+          [
+              T=Euro
+          ]
+  c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\unittests\banktest.h(145): note: see reference to function template instantiation 'Bank::Bank<Euro>(const T &&,const std::string &)' being compiled
+          with
+          [
+              T=Euro
+          ]
+  Human.cpp
+  Euro.cpp
+  CreditCard.cpp
+  Company.cpp
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\company.cpp(23): warning C4018: '<': signed/unsigned mismatch
+  Client.cpp
+  Bank.cpp
+  Account.cpp
+  Generating Code...
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.exe
   ConsoleApplication18.vcxproj -> C:\Users\Karol\Desktop\Książki\ConsoleApplication18\Debug\ConsoleApplication18.pdb (Full PDB)
