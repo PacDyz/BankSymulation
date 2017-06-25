@@ -5,9 +5,9 @@
 Account::Account(const long long& numberAccount,
 	const int& clientMoney,
 	const std::string& password) :
-	numberAccount(numberAccount),
-	moneyInAccount(clientMoney),
-	password(password){}
+	numberAccount{ numberAccount },
+	moneyInAccount{ clientMoney },
+	password{ password } {}
 
 void Account::addMoneyToAccount(const int&& newMoney)
 {

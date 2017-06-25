@@ -4,7 +4,7 @@
 
 Human::Human(const std::string& name,
 	const std::string& surname,
-	const int& pesel) : id({ name,surname,pesel }) {}
+	const int& pesel) : id{ name,surname,pesel } {}
 
 int Human::getPesel() const
 {

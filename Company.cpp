@@ -12,8 +12,8 @@ int generator::getRandomNumber(const int& begin, const int& end)
 {
 	std::uniform_int_distribution<> uid(begin, end);
 	static std::random_device rd;
-	static std::mt19937 g(rd());
-	unsigned int randomNumber = uid(g);
+	static std::mt19937 g{ rd() };
+	unsigned int randomNumber( uid(g) );
 	return randomNumber;
 }
 
@@ -33,7 +33,7 @@ std::vector<long long> generator::generateNumberCard()
 	std::vector<long long> vec(100);
 	std::iota(std::begin(vec), std::end(vec), counterNumbersCards);
 	std::random_device rd;
-	std::mt19937 g(rd());
+	std::mt19937 g{ rd() };
 	std::shuffle(std::begin(vec), std::end(vec), g);
 	counterNumbersCards += 100;
 	return vec;
@@ -46,7 +46,7 @@ int Company::getNumberOfClients() const
 
 std::shared_ptr<Client> Company::findClient(const int& pesel) const
 {
-	auto itr = listOfClients.find(pesel);
+	auto itr{ listOfClients.find(pesel) };
 	return itr->second;
 }
 
@@ -64,18 +64,20 @@ void Company::displayAllClients() const
 
 void Company::employWorker( std::shared_ptr<Human> human)
 {
-	auto worker = std::make_unique<Worker>(human, 3500);
+	auto worker{ std::make_unique<Worker>(human, 3500) };
 	listOfWorkers.insert(std::make_pair( worker->getPesel(), std::move(worker) ) );
 }
 
 void Company::moveClients(std::map<int, std::shared_ptr<Client>>&& listOfClients)
 {
-	this->listOfClients.insert(std::make_move_iterator(listOfClients.begin()), std::make_move_iterator(listOfClients.end()));
+	this->listOfClients.insert(std::make_move_iterator(listOfClients.begin()),
+								std::make_move_iterator(listOfClients.end()));
 	listOfClients.clear();
 }
 void Company::moveWorkers(std::map<int, std::unique_ptr<Worker>>&& listOfWorkers)
 {
-	this->listOfWorkers.insert(std::make_move_iterator(listOfWorkers.begin()), std::make_move_iterator(listOfWorkers.end()));
+	this->listOfWorkers.insert(std::make_move_iterator(listOfWorkers.begin()),
+								std::make_move_iterator(listOfWorkers.end()));
 	listOfWorkers.clear();
 }
 
@@ -100,8 +102,8 @@ void Company::setCompany(const int&& capital,
 						std::map<int, std::shared_ptr<Client>>&& listOfClients,
 						std::map<int, std::unique_ptr<Worker>>&& listOfWorkers)
 {
-	std::thread t1(&Company::moveClients, this, std::move(listOfClients));
-	std::thread t2(&Company::moveWorkers, this, std::move(listOfWorkers));
+	std::thread t1{ &Company::moveClients, this, std::move(listOfClients) };
+	std::thread t2{ &Company::moveWorkers, this, std::move(listOfWorkers) };
 	this->capital += capital;
 	this->office.emplace_back(std::move(mainOffice));
 	t1.join();
