@@ -6,7 +6,8 @@ c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\bank.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\client.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\company.obj
-c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\creditcard.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\bankcard.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\bankcardbuilder.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\euro.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\human.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\banksymulation.obj
@@ -14,6 +15,11 @@ c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\travelagency.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\usd.obj
 c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\worker.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\creditcardbuilder.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\userinterface.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\debitcardbuilder.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\gmock-all.obj
+c:\users\karol\desktop\książki\consoleapplication18\consoleapplication18\debug\gtest-all.obj
 c:\users\karol\desktop\książki\consoleapplication18\debug\consoleapplication18.ilk
 c:\users\karol\desktop\książki\consoleapplication18\debug\consoleapplication18.exe
 c:\users\karol\desktop\książki\consoleapplication18\debug\consoleapplication18.pdb

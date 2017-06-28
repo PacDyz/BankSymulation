@@ -2,20 +2,17 @@
 #include "Client.h"
 
 
-Client::Client(const Human&& human) : Human(std::move(human)), 
-									creditCard(0,"","","",""),
-									passwordToAccount("") {}
 
 Client::~Client() = default;
 
-CreditCard Client::getCreditCard() const
+BankCard Client::getCreditCard() const
 {
-	return creditCard;
+	return bankCard;
 }
 
 long long Client::getNumberCreditCard() const
 {
-	return creditCard.getNumberCard();
+	return bankCard.getNumberCard();
 }
 
 std::string Client::getPassword() const
@@ -23,9 +20,9 @@ std::string Client::getPassword() const
 	return passwordToAccount;
 }
 
-void Client::setCreditCard(const CreditCard& newCreditCard, const std::string& generatedPasswordToAccount)
+void Client::setBankCard(const BankCard& newCreditCard, const std::string& generatedPasswordToAccount)
 {
-	creditCard = newCreditCard;
+	bankCard = newCreditCard;
 	passwordToAccount = generatedPasswordToAccount;
 }
 

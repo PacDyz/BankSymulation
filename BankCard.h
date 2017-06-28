@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
-class CreditCard
+class BankCard
 {
 public:
 	//CreditCard() :numberCard(0), name(""), surname(""), typeOfCreditCard(""), expiryDate("") {}
-	CreditCard(const long long&,
+	BankCard(const long long&,
+		const std::string&,
 		const std::string&,
 		const std::string&,
 		const std::string&,
@@ -12,16 +13,18 @@ public:
 	long long getNumberCard() const;
 	std::string getExpiryDate() const;
 	std::string getName() const;
+	std::string getNameCard() const;
 	std::string getSurname() const;
-	std::string getTypeOfCreditCard() const;
-	void operator=(const CreditCard&);
-	~CreditCard();
+	std::string getTypeOfBankCard() const;
+	void operator=(const BankCard&);
+	~BankCard();
 private:
 	 long long numberCard;
 	 std::string expiryDate;
 	 std::string name;
 	 std::string surname;
-	 std::string typeOfCreditCard;
+	 std::string typeOfBankCard;
+	 std::string nameCard;
 };
 
-std::ostream &operator<<(std::ostream& str, const CreditCard&);
+std::ostream &operator<<(std::ostream& str, const BankCard&);

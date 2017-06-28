@@ -12,13 +12,13 @@ public:
 	// template <typename T> 
 	// Bank(std::initializer_list<T> il) = delete; this is reason why i don't use {} with constructor
 	//										if i did this, i must write this 2 lines in all class
-	CreditCard createAccount(const Human&, const std::string&);
-	void addClient(const Human&) override;
+	BankCard createAccount(const std::shared_ptr<Client>& client, const std::string&);
+	void addClient(const std::shared_ptr<Client>& client) override;
 	void addMoneyToAccount(const int&&, const long long&);
 	void checkNumberAvailableCard();
 	void displayStateAccount(const long long&);
 	void fillInAvailableNumberCard();
-	auto findAccount(const long long& numberCard) const;
+	auto findAccount(const long long&) const;
 	void moveAccount(std::map<long long, std::unique_ptr<Account>>&&);
 	void setBank(Bank&&);
 	~Bank();

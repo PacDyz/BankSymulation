@@ -11,7 +11,8 @@
 #include "UnitTests/creditCardTest.h"
 #include "UnitTests/usdTest.h"
 #include "travelAgencyTest.h"
-
+#include "creditCardBuilderTest.h"
+#include "debitCardBuilderTest.h"
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

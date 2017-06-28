@@ -23,7 +23,7 @@ public:
 					const std::string&&,
 					std::map<int, std::shared_ptr<Client>>&&,
 					std::map<int, std::unique_ptr<Worker>>&&);
-	virtual void addClient(const Human&) = 0;
+	virtual void addClient(const std::shared_ptr<Client>&) = 0;
 	int getNumberOfClients() const;
 	std::string getMainOffice() const;
 	std::shared_ptr<Client> findClient(const int&) const;

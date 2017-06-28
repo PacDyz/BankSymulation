@@ -8,7 +8,7 @@ public:
 	TravelAgency(const T&&, const std::string&);
 	template<>
 	TravelAgency(const int&& capital, const std::string& mainOffice);
-	void addClient(const Human& human);
+	void addClient(const std::shared_ptr<Client>&);
 	~TravelAgency();
 };
 

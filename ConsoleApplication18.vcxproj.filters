@@ -42,9 +42,6 @@
     <ClInclude Include="Worker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CreditCard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Money.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,6 +84,27 @@
     <ClInclude Include="travelAgencyTest.h">
       <Filter>UnitTests</Filter>
     </ClInclude>
+    <ClInclude Include="BankCardBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BankCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditCardBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DebitCardBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="creditCardBuilderTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="debitCardBuilderTest.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -107,9 +125,6 @@
     <ClCompile Include="Worker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CreditCard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Money.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -126,6 +141,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BankSymulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCardBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditCardBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DebitCardBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -18,6 +18,7 @@ void travelAgencyTest::SetUp()
 
 TEST_F(travelAgencyTest, schouldCreateClient)
 {
-	Human human( "Karol", "Olejniczak", 963748234 );
-	travelAgency->addClient(human);
+	Human human("Karol", "Olejniczak", 963748234);
+	std::shared_ptr<Client> client (std::make_shared<Client>(human));
+	travelAgency->addClient(client);
 }

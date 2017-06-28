@@ -1,7 +1,7 @@
 #pragma once
 #include "gtest\gtest.h"
 #include "Client.h"
-#include "CreditCard.h"
+#include "BankCard.h"
 
 class clientTest : public testing::Test
 {
@@ -19,7 +19,7 @@ void clientTest::SetUp()
 TEST_F(clientTest, shouldSetCreditCard)
 {
 //	Account account{ 500 };
-	client->setCreditCard(CreditCard( 342342, "Karol", "Olejniczak", "Visa", "10/22" ), "password");
+	client->setBankCard(BankCard( 342342, "Karol", "Olejniczak", "Visa", "10/22", "debit card" ), "password");
 }
 TEST_F(clientTest, shouldGetPesel)
 {
@@ -40,7 +40,7 @@ TEST_F(clientTest, schouldGetEmptyPassword)
 }
 TEST_F(clientTest, schouldGetPassword)
 {
-	client->setCreditCard( CreditCard{342342, "Karol", "Olejniczak", "Visa", "10/22"}, "password" );
+	client->setBankCard( BankCard(342342, "Karol", "Olejniczak", "Visa", "10/22", "credit card"), "password" );
 	EXPECT_EQ("password", client->getPassword());
 }
 TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithoutCreditCard)
@@ -49,6 +49,6 @@ TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithoutCreditCard)
 }
 TEST_F(clientTest, schouldDisplayBasicInformationAboutClientWithCreditCard)
 {
-	client->setCreditCard( CreditCard(342342, "Karol", "Olejniczak", "Visa", "10/22"), "password" );
+	client->setBankCard( BankCard(342342, "Karol", "Olejniczak", "Visa", "10/22", "credit card"), "password" );
 	std::cout << client;
 }

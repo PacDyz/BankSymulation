@@ -3,10 +3,10 @@
 
 
 
-void TravelAgency::addClient(const Human& human)
+void TravelAgency::addClient(const std::shared_ptr<Client>& client)
 {
-	auto client(std::make_unique<Client>(std::move(human)));
-	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
+	auto agencyClient(client);
+	listOfClients.insert(std::make_pair(agencyClient->getPesel(), agencyClient));
 }
 
 TravelAgency::~TravelAgency() = default;

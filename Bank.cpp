@@ -2,9 +2,25 @@
 #include "Bank.h"
 #include <iostream>
 #include <thread>
+#include "BankCardBuilder.h"
+#include "CreditCardBuilder.h"
+#include "DebitCardBuilder.h"
+#include "UserInterface.h"
 //std::condition_variable cond;
 //std::mutex mu;
 
+
+//	std::unique_ptr<BankCardBuilder> chooseBuilder(const int&);
+namespace
+{
+	std::unique_ptr<BankCardBuilder> chooseBuilder(const int& typeOfCard)
+	{
+		if (typeOfCard == 1)
+			return std::make_unique<CreditCardBuilder>();
+		else
+			return std::make_unique<DebitCardBuilder>();
+	}
+}
 
 Bank::~Bank() = default;
 
@@ -13,17 +29,24 @@ auto Bank::findAccount(const long long& numberCard) const
 	return listOfAccount.find(numberCard);
 }
 
-CreditCard Bank::createAccount(const Human& human, const std::string& password)
+BankCard Bank::createAccount(const std::shared_ptr<Client>& client, const std::string& password)
 {
 	long long numberCard{ newNumbersCards.back() };
 	newNumbersCards.pop_back();
-	CreditCard creditCard(numberCard, human.getName(), human.getSurname(), "Visa", "12/22");
 	auto account = std::make_unique<Account>( numberCard, 700, password );
 	listOfAccount.insert(std::make_pair(numberCard, std::move(account)));
-	return creditCard;
+	std::unique_ptr<BankCardBuilder> bankCardBuilder = 
+		chooseBuilder(1);
+	BankCard bankCard(numberCard,
+		client->getName(),
+		client->getSurname(),
+		bankCardBuilder->getTypeOfBankCard(),
+		bankCardBuilder->setExpiryDate(),
+		bankCardBuilder->getNameDistributorCard());
+	return bankCard;
 }
 
-void Bank::addClient(const Human& human)
+void Bank::addClient(const std::shared_ptr<Client>& client)
 {
 	//std::thread t1(&Bank::checkNumberAvailableCard, this);
 	checkNumberAvailableCard();
@@ -34,18 +57,17 @@ void Bank::addClient(const Human& human)
 	//std::thread t5(generator::generatePassword, std::move(f));
 	//t1.join();
 	//t5.join();
-	CreditCard newCreditCard(createAccount(human, password));
+	BankCard newBankCard(createAccount(client, password));
 	//std::string password = f.get();
 	//auto fu = std::async(std::launch::async, &Bank::createAccount, this,  human, password);
 	//CreditCard newCreditCard;
 	//std::thread t3(&Bank::createAccount, this, human, password, std::ref(newCreditCard));
 	//t3.join();
-	auto client(std::make_unique<Client>(std::move(human)));
 	//CreditCard newCreditCard = fu.get();
 	//std::thread t2(&Client::setCreditCard, *client, newCreditCard, password);						// change first argument...
 	//t2.join();
-	client->setCreditCard(newCreditCard, password);
-	listOfClients.insert(std::make_pair(client->getPesel(), std::move(client)));
+	client->setBankCard(newBankCard, password);
+	listOfClients.insert(std::make_pair(client->getPesel(), client));
 }
 
 void Bank::addMoneyToAccount(const int&& newMoneyToAccount, const long long& numberCard)
